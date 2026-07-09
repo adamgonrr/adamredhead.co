@@ -1,0 +1,1952 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>The Profit &amp; Fires Scan — for home services owners doing $3M to $15M</title>
+<meta name="description" content="A scan that reads your business the way an operator reads it: Sales, Operations, Accounting and Cash as one system. See which legs are carrying the load and which are leaking. No email required." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#15161A; --ink-2:#1B1D23; --ink-3:#23262E; --ink-4:#2B2F38;
+    --line:#34373F; --line-soft:#2A2D35;
+    --paper:#ECE7DD; --muted:#9A938636; --text-dim:#9D958A; --text-faint:#6E6A63;
+    --ember:#EE7B3C; --ember-deep:#C9531F; --ember-soft:#EE7B3C22;
+    --steel:#6E93B8; --steel-deep:#3E6488;
+    --weak:#E2603A; --mid:#E0A33C; --strong:#5DAE84;
+    --display:'Archivo',system-ui,sans-serif;
+    --body:'IBM Plex Sans',system-ui,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,monospace;
+    --shadow:0 20px 50px -28px rgba(0,0,0,.9);
+    --maxw:760px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--ink); color:var(--paper);
+    font-family:var(--body); font-size:17px; line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    background-image:
+      radial-gradient(120% 80% at 50% -10%, #20222A 0%, var(--ink) 55%),
+      radial-gradient(60% 50% at 100% 0%, rgba(238,123,60,.06) 0%, rgba(0,0,0,0) 60%);
+    background-attachment:fixed;
+  }
+  @media (prefers-reduced-motion: reduce){ *{animation:none!important; transition:none!important; scroll-behavior:auto!important} }
+
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px}
+  .stage{min-height:100vh; padding:34px 0 64px; display:flex; flex-direction:column}
+  .eyebrow{font-family:var(--mono); font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:var(--ember); font-weight:600}
+  .eyebrow.steel{color:var(--steel)}
+  .eyebrow.dim{color:var(--text-faint)}
+
+  h1,h2,h3{font-family:var(--display); margin:0; line-height:1.04; letter-spacing:-.012em}
+  h1{font-weight:900; font-size:clamp(34px,8.4vw,58px)}
+  h2{font-weight:800; font-size:clamp(25px,5.6vw,36px); letter-spacing:-.01em}
+  h3{font-weight:700; font-size:19px}
+  p{margin:0 0 1em}
+  .lead{font-size:18px; color:#D7D1C6}
+  .small{font-size:14px; color:var(--text-dim)}
+  .mono{font-family:var(--mono)}
+  b,strong{font-weight:600; color:#F6F1E7}
+
+  /* ---------- brand mark ---------- */
+  .brand{display:flex; align-items:center; gap:11px; margin-bottom:30px}
+  .brand .mk{width:30px; height:30px; flex:0 0 auto}
+  .brand .nm{font-family:var(--display); font-weight:800; font-size:15px; letter-spacing:.02em}
+  .brand .nm span{color:var(--ember)}
+  .brand .by{margin-left:auto; font-family:var(--mono); font-size:11px; color:var(--text-faint); letter-spacing:.08em; text-transform:uppercase}
+
+  /* ---------- cover ---------- */
+  .cover .hero{margin-top:auto; margin-bottom:auto; padding:36px 0}
+  .cover h1{margin:18px 0 0; font-size:clamp(38px,9.6vw,72px); line-height:1.0}
+  .cover .heat{color:var(--ember)}
+  .cover .eyebrow{display:block}
+  .subhead{font-size:clamp(16px,3.4vw,20px); line-height:1.5; color:#CBC5BA; margin-top:22px; max-width:40ch; font-family:var(--body); font-weight:400}
+  .subhead b{color:var(--paper)}
+
+  .cta-row{display:flex; align-items:center; gap:20px; flex-wrap:wrap; margin-top:34px}
+  .cta-meta{display:flex; flex-direction:column; gap:3px; font-family:var(--mono); font-size:12.5px; color:var(--text-dim); line-height:1.5}
+  .cta-meta b{color:var(--paper); font-weight:600}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    appearance:none; cursor:pointer; font-family:var(--display); font-weight:800;
+    font-size:17px; letter-spacing:.005em; border:0; border-radius:11px;
+    padding:16px 22px; background:var(--ember); color:#1A0E06;
+    display:inline-flex; align-items:center; gap:10px; text-decoration:none;
+    box-shadow:0 12px 26px -14px var(--ember-deep); transition:transform .12s ease, filter .12s ease;
+  }
+  .btn:hover{filter:brightness(1.06); transform:translateY(-1px)}
+  .btn:active{transform:translateY(0)}
+  .btn.full{width:100%; justify-content:center}
+  .btn.steel{background:var(--steel); color:#06121C; box-shadow:0 12px 26px -14px var(--steel-deep)}
+  .btn.ghost{background:transparent; color:var(--paper); border:1px solid var(--line); box-shadow:none; font-weight:600}
+  .btn.ghost:hover{border-color:var(--text-dim); filter:none}
+  .btn .arw{font-family:var(--body); font-weight:700}
+
+  .navrow{display:flex; gap:12px; align-items:center; margin-top:30px}
+  .navrow .btn{flex:1; justify-content:center}
+  .btn.back{flex:0 0 auto; background:transparent; color:var(--text-dim); border:1px solid var(--line-soft); box-shadow:none; font-weight:600; padding:16px 18px}
+  .btn.back:hover{filter:none; color:var(--paper)}
+  .btn[disabled]{opacity:.4; cursor:not-allowed; transform:none!important}
+
+  /* ---------- progress ---------- */
+  .topbar{position:sticky; top:0; z-index:20; background:linear-gradient(var(--ink), rgba(21,22,26,.86)); backdrop-filter:blur(6px); border-bottom:1px solid var(--line-soft)}
+  .topbar .inner{max-width:var(--maxw); margin:0 auto; padding:12px 22px; display:flex; align-items:center; gap:14px}
+  .topbar .nm{font-family:var(--display); font-weight:800; font-size:13px; letter-spacing:.02em}
+  .topbar .nm span{color:var(--ember)}
+  .gauge{flex:1; height:7px; border-radius:99px; background:#2A2D35; overflow:hidden; position:relative}
+  .gauge i{position:absolute; left:0; top:0; bottom:0; width:0; background:linear-gradient(90deg,var(--ember-deep),var(--ember)); border-radius:99px; transition:width .4s cubic-bezier(.3,.8,.3,1)}
+  .gauge .ticks{position:absolute; inset:0; display:flex}
+  .gauge .ticks span{flex:1; border-right:1px solid rgba(21,22,26,.7)}
+  .gauge .ticks span:last-child{border-right:0}
+  .pct{font-family:var(--mono); font-size:12px; color:var(--text-dim); min-width:42px; text-align:right; font-weight:600}
+
+  /* ---------- question cards ---------- */
+  .section-intro{margin:8px 0 26px}
+  .leg-tag{display:inline-flex; align-items:center; gap:9px; font-family:var(--mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--text-dim); font-weight:600}
+  .leg-tag .dot{width:9px; height:9px; border-radius:2px; background:var(--ember); transform:rotate(45deg)}
+  .section-intro h2{margin-top:14px}
+  .section-intro p{margin-top:12px; color:#CBC5BA; max-width:60ch}
+
+  .q{border:1px solid var(--line-soft); background:linear-gradient(var(--ink-2),var(--ink-2)); border-radius:14px; padding:20px 19px; margin-bottom:18px}
+  .q .qnum{font-family:var(--mono); font-size:11px; font-weight:600; color:var(--ember); letter-spacing:.12em}
+  .q .qtext{font-family:var(--display); font-weight:700; font-size:18px; line-height:1.28; margin:7px 0 4px; color:#F6F1E7}
+  .q .qhint{font-size:13.5px; color:var(--text-dim); margin-bottom:14px}
+
+  .opts{display:flex; flex-direction:column; gap:9px; margin-top:12px}
+  .opt{display:flex; align-items:flex-start; gap:12px; cursor:pointer; border:1px solid var(--line-soft); background:rgba(0,0,0,.14); border-radius:11px; padding:13px 14px; transition:border-color .12s, background .12s}
+  .opt:hover{border-color:#454953}
+  .opt .mark{flex:0 0 auto; width:19px; height:19px; border-radius:50%; border:2px solid #4A4E58; margin-top:1px; position:relative; transition:border-color .12s}
+  .opt.multi .mark{border-radius:5px}
+  .opt .mark::after{content:""; position:absolute; inset:3px; border-radius:50%; background:var(--ember); transform:scale(0); transition:transform .14s}
+  .opt.multi .mark::after{border-radius:2px}
+  .opt .txt{font-size:15.5px; color:#D8D2C7; line-height:1.4}
+  .opt.sel{border-color:var(--ember); background:var(--ember-soft)}
+  .opt.sel .mark{border-color:var(--ember)}
+  .opt.sel .mark::after{transform:scale(1)}
+  .opt.sel .txt{color:#F6F1E7}
+  .opt.maxed{opacity:.45}
+  .pickcap{font-family:var(--mono); font-size:11px; color:var(--text-faint); margin-top:9px; letter-spacing:.04em}
+
+  /* write-in + typed */
+  .sayit{margin-top:11px; display:flex; align-items:center; gap:9px}
+  .sayit label{font-family:var(--mono); font-size:11px; color:var(--text-faint); white-space:nowrap; letter-spacing:.04em}
+  .sayit input{flex:1}
+  input[type=text],input[type=number]{
+    width:100%; font-family:var(--body); font-size:15px; color:var(--paper);
+    background:rgba(0,0,0,.28); border:1px solid var(--line); border-radius:9px; padding:11px 12px;
+  }
+  input::placeholder{color:#5E5A53}
+  input:focus,.opt:focus-visible,.btn:focus-visible{outline:2px solid var(--steel); outline-offset:2px}
+
+  .typed{display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-top:6px}
+  .typed .field{display:flex; align-items:center; gap:8px; background:rgba(0,0,0,.28); border:1px solid var(--line); border-radius:9px; padding:4px 12px 4px 12px}
+  .typed .field .pre{font-family:var(--mono); color:var(--text-dim); font-size:15px}
+  .typed .field .suf{font-family:var(--mono); color:var(--text-dim); font-size:14px}
+  .typed .field input{border:0; background:transparent; padding:9px 0; width:96px; font-family:var(--mono); font-weight:600; font-size:16px}
+  .typed .field input:focus{outline:none}
+  .notsure{font-family:var(--mono); font-size:12px; color:var(--text-dim); border:1px dashed var(--line); background:transparent; border-radius:9px; padding:10px 13px; cursor:pointer; font-weight:600; letter-spacing:.02em; transition:.12s}
+  .notsure:hover{border-color:var(--text-dim); color:var(--paper)}
+  .notsure.on{border-style:solid; border-color:var(--steel); color:var(--steel); background:rgba(110,147,184,.1)}
+
+  .mix-row{display:flex; align-items:center; gap:12px; padding:9px 0; border-bottom:1px solid var(--line-soft)}
+  .mix-row:last-of-type{border-bottom:0}
+  .mix-row .lbl{flex:1; font-size:15px; color:#D8D2C7}
+  .mix-row .pctin{display:flex; align-items:center; gap:5px; background:rgba(0,0,0,.28); border:1px solid var(--line); border-radius:8px; padding:2px 9px}
+  .mix-row .pctin input{border:0; background:transparent; width:48px; text-align:right; font-family:var(--mono); font-weight:600; font-size:15px; padding:8px 0}
+  .mix-row .pctin input:focus{outline:none}
+  .mix-row .pctin .suf{font-family:var(--mono); color:var(--text-dim); font-size:14px}
+  .mixtotal{display:flex; justify-content:flex-end; gap:8px; font-family:var(--mono); font-size:12px; color:var(--text-dim); margin-top:10px}
+  .mixtotal b{color:var(--paper)}
+
+  /* ---------- report ---------- */
+  .rpt h2{margin-bottom:0}
+  .block{margin:0 0 34px}
+  .divider{height:1px; background:var(--line-soft); margin:34px 0}
+
+  .archetype{border:1px solid var(--line); border-radius:18px; padding:26px 22px; background:linear-gradient(160deg,var(--ink-3),var(--ink-2)); box-shadow:var(--shadow); position:relative; overflow:hidden}
+  .archetype::before{content:""; position:absolute; inset:0; background:radial-gradient(80% 120% at 100% 0%, rgba(238,123,60,.12), transparent 60%); pointer-events:none}
+  .scorewrap{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap}
+  .scorebig{font-family:var(--display); font-weight:900; font-size:clamp(52px,15vw,84px); line-height:.9; letter-spacing:-.03em}
+  .scoreof{font-family:var(--mono); font-size:14px; color:var(--text-dim)}
+  .arch-name{font-family:var(--display); font-weight:900; font-size:clamp(24px,6vw,34px); letter-spacing:.01em; margin-top:4px}
+  .arch-body{margin-top:14px; color:#D7D1C6; max-width:58ch}
+
+  .meter{margin-top:20px}
+  .meter .track{height:12px; border-radius:99px; background:#2A2D35; position:relative; overflow:hidden; display:flex}
+  .meter .track i{flex:1; height:100%}
+  .meter .track i.s1{background:#4A2418}.meter .track i.s2{background:#5A3A14}.meter .track i.s3{background:#3A4A3C}.meter .track i.s4{background:#264B38}
+  .meter .needle{position:absolute; top:-5px; width:3px; height:22px; background:var(--paper); border-radius:2px; box-shadow:0 0 0 2px var(--ink); transition:left .6s cubic-bezier(.3,.8,.3,1)}
+  .meter .labels{display:flex; justify-content:space-between; margin-top:9px; font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; color:var(--text-faint); text-transform:uppercase}
+
+  /* glance table */
+  .glance{border:1px solid var(--line-soft); border-radius:14px; overflow:hidden}
+  .grow{display:grid; grid-template-columns:1fr auto auto; gap:10px; align-items:center; padding:13px 16px; border-bottom:1px solid var(--line-soft)}
+  .grow:last-child{border-bottom:0}
+  .grow .gl{font-size:14.5px; color:#CFC9BE}
+  .grow .gv{font-family:var(--mono); font-weight:600; font-size:17px; text-align:right; white-space:nowrap}
+  .grow .gb{font-family:var(--mono); font-size:11.5px; color:var(--text-dim); text-align:right; white-space:nowrap}
+  .grow.flag{background:rgba(226,96,58,.06)}
+  .grow .gv.warn{color:var(--ember)}
+  .grow .gv.ok{color:var(--strong)}
+  .grow .gv.est{color:var(--steel); font-weight:500}
+  .caveat{font-size:12.5px; color:var(--text-faint); padding:10px 16px; border-bottom:1px solid var(--line-soft); font-style:italic}
+  .glance-note{margin-top:12px; font-size:13.5px; color:var(--text-dim)}
+
+  .callout{border-left:3px solid var(--ember); background:rgba(0,0,0,.18); border-radius:0 10px 10px 0; padding:14px 16px; margin-top:16px; color:#D7D1C6; font-size:15px}
+  .callout.steel{border-left-color:var(--steel)}
+  .callout .h{font-family:var(--display); font-weight:700; font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:var(--ember); display:block; margin-bottom:6px}
+  .callout.steel .h{color:var(--steel)}
+
+  /* legs verdict + chassis */
+  .legs-vis{margin:8px 0 22px}
+  .legcard{border:1px solid var(--line-soft); border-radius:12px; padding:15px 16px; margin-bottom:12px; background:var(--ink-2); display:flex; gap:14px; align-items:flex-start}
+  .legcard .badge{flex:0 0 auto; font-family:var(--mono); font-size:10.5px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; padding:5px 9px; border-radius:6px; margin-top:2px}
+  .badge.weak{background:rgba(226,96,58,.16); color:var(--weak)}
+  .badge.mid{background:rgba(224,163,60,.16); color:var(--mid)}
+  .badge.strong{background:rgba(93,174,132,.16); color:var(--strong)}
+  .legcard .lc{flex:1}
+  .legcard .lc .nm{font-family:var(--display); font-weight:800; font-size:16px; display:flex; align-items:center; gap:9px}
+  .legcard .lc .sc{font-family:var(--mono); font-size:12px; color:var(--text-dim); font-weight:600}
+  .legcard .lc .vb{margin-top:6px; font-size:14.5px; color:#CFC9BE; line-height:1.45}
+  .shortest{margin-top:6px; border:1px solid var(--line); border-radius:11px; padding:14px 16px; background:rgba(238,123,60,.05); font-size:15px; color:#D7D1C6}
+  .shortest b{color:var(--ember)}
+  .ranklist{font-family:var(--mono); font-size:13px; color:var(--paper); margin-top:8px; letter-spacing:.01em}
+
+  .leak{border-left:3px solid var(--ember-deep); padding:10px 0 10px 15px; margin:11px 0; font-size:15px; color:#D7D1C6}
+  .leak.cash{border-left-color:var(--steel-deep)}
+  .firename{display:inline-block; font-family:var(--mono); font-size:13px; color:#E7E1D6; background:rgba(0,0,0,.25); border:1px solid var(--line-soft); border-radius:7px; padding:7px 11px; margin:0 7px 7px 0}
+
+  .cost{border:1px solid var(--line); border-radius:14px; padding:20px; background:linear-gradient(160deg,var(--ink-3),var(--ink-2))}
+  .cost .row{display:flex; justify-content:space-between; align-items:baseline; gap:12px; padding:11px 0; border-bottom:1px solid var(--line-soft)}
+  .cost .row:last-child{border-bottom:0}
+  .cost .row .k{font-size:14.5px; color:#CFC9BE}
+  .cost .row .v{font-family:var(--mono); font-weight:600; font-size:20px; color:var(--ember); white-space:nowrap}
+  .cost .prize{margin-top:14px; font-size:15px; color:#E7E1D6}
+
+  .onemove{border:1px solid var(--ember); border-radius:14px; padding:20px; background:rgba(238,123,60,.06)}
+  .onemove .h{font-family:var(--display); font-weight:800; font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:var(--ember)}
+  .onemove .mv{font-family:var(--display); font-weight:700; font-size:19px; line-height:1.3; margin-top:10px; color:#F6F1E7}
+
+  .ctablock{border:1px solid var(--line); border-radius:16px; padding:24px 22px; background:linear-gradient(160deg,var(--ink-3),var(--ink-2)); box-shadow:var(--shadow)}
+  .ctablock h3{font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:var(--steel); font-weight:700}
+  .ctablock .big{font-family:var(--display); font-weight:800; font-size:22px; margin:10px 0 6px; color:#F6F1E7}
+  .price{font-family:var(--mono); font-weight:600; color:var(--ember); font-size:18px}
+  .ctablock .alt{margin-top:18px; padding-top:18px; border-top:1px solid var(--line-soft); font-size:14.5px; color:var(--text-dim)}
+
+  .adamnote{display:flex; gap:15px; align-items:flex-start; border:1px solid var(--line-soft); border-radius:14px; padding:18px; margin-top:22px; background:var(--ink-2)}
+  .adamnote .av{flex:0 0 auto; width:46px; height:46px; border-radius:50%; background:linear-gradient(150deg,var(--ember),var(--ember-deep)); display:flex; align-items:center; justify-content:center; font-family:var(--display); font-weight:900; color:#1A0E06; font-size:18px}
+  .adamnote .nt{font-size:14.5px; color:#D7D1C6}
+  .adamnote .nt .who{font-family:var(--display); font-weight:700; color:var(--paper); font-size:13px; display:block; margin-bottom:4px}
+
+  .gateform{display:none; margin-top:16px; padding-top:16px; border-top:1px solid var(--line-soft)}
+  .gateform.open{display:block}
+  .gateform .gf-row{display:flex; flex-direction:column; gap:6px; margin-top:12px}
+  .gateform label{font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--text-dim)}
+  .gateform input{background:var(--ink); border:1px solid var(--line); border-radius:10px; padding:12px 14px; color:var(--paper); font-family:var(--body); font-size:15px; width:100%}
+  .gateform input:focus{outline:none; border-color:var(--ember)}
+  .gateform .gf-err{color:var(--weak); font-size:12.5px; margin-top:10px; display:none}
+  .gateform .gf-fine{font-size:12px; color:var(--text-faint); margin-top:10px; line-height:1.5}
+  .gatedone{margin-top:16px; padding-top:16px; border-top:1px solid var(--line-soft); font-size:14.5px; color:#D7D1C6; line-height:1.55}
+  .gatedone a{color:var(--ember)}
+
+  .disclaimer{font-size:12px; color:var(--text-faint); margin-top:18px; line-height:1.5}
+
+  .blindspot{border:1px dashed var(--steel); border-radius:11px; padding:14px 16px; margin-top:14px; font-size:14.5px; color:#CFC9BE; background:rgba(110,147,184,.05)}
+
+  .reveal{opacity:0; transform:translateY(10px); animation:rise .5s forwards}
+  @keyframes rise{to{opacity:1; transform:none}}
+  .delay1{animation-delay:.05s}.delay2{animation-delay:.12s}.delay3{animation-delay:.2s}.delay4{animation-delay:.28s}.delay5{animation-delay:.36s}
+
+  .footer{margin-top:46px; padding-top:20px; border-top:1px solid var(--line-soft); font-family:var(--mono); font-size:11px; color:var(--text-faint); letter-spacing:.04em; display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap}
+  .hidden{display:none!important}
+  @media (max-width:480px){
+    .navrow{flex-wrap:wrap}
+    .grow{grid-template-columns:1fr auto}
+    .grow .gb{grid-column:1 / -1; text-align:left; margin-top:-4px}
+  }
+</style>
+</head>
+<body>
+
+<!-- progress bar (hidden on cover/report) -->
+<div class="topbar hidden" id="topbar">
+  <div class="inner">
+    <div class="nm">PROFIT &amp; <span>FIRES</span></div>
+    <div class="gauge"><i id="gaugeFill"></i><div class="ticks"><span></span><span></span><span></span><span></span><span></span></div></div>
+    <div class="pct" id="pctLabel">0%</div>
+  </div>
+</div>
+
+<div id="app"></div>
+
+<script>
+"use strict";
+
+/* =====================================================================
+   THE PROFIT & FIRES SCAN  —  engine + UI
+   Built to the FINAL v5 copy/build spec (Adam Redhead / NRR via InLead).
+   Single-file, no dependencies. Drop on Netlify.
+
+   NOTE ON BENCHMARKS: the companion "Profit and Fires Benchmarks" file was
+   not supplied. RESTORATION x INSURANCE is wired to Adam's worked example
+   (SOLID). All other trades use PLACEHOLDER bands flagged below — replace
+   with the graded numbers before launch. Search "PLACEHOLDER".
+   ===================================================================== */
+
+/* ----------------------------- CONFIG ------------------------------ */
+const CFG = {
+  bookUrl: "https://calendly.com/adamredhead/30min",
+  sendEmail: "adam@gonrr.com",
+  /* GHL inbound-webhook URL. While empty, the gated PDF download is hidden
+     (no capture endpoint = no gate) — the booking CTA works regardless. */
+  webhookUrl: "https://services.leadconnectorhq.com/hooks/lP9n8Hakg6Lq3Rfc7b6L/webhook-trigger/4ab599d6-e337-4d03-80e8-494e8658fe97",
+};
+
+/* ----------------------------- STATE ------------------------------- */
+const S = {
+  page: 0,
+  // typed anchors
+  A1:"", A1w:"", A2:"", A2w:"",
+  A3:null, A3ns:false, A4:null, A4ns:false,
+  A5:null, A5ns:false, A6:null, A6ns:false,
+  A7:null, A7ns:false, A8:null, A8ns:false,
+  // sales
+  S1:{ref:"",rep:"",ins:"",gc:"",ad:"",out:"",other:""}, S1w:"",
+  S2:null,S2w:"", S3:null,S3w:"", S4:null,S4w:"", S5:null,S5w:"",
+  // ops
+  O1:null,O1w:"", O2:null,O2w:"", O3:null,O3w:"", O4:null,O4w:"", O5:null,O5w:"",
+  // accounting
+  AC1:null,AC1w:"", AC2:[],AC2w:"", AC3:null,AC3w:"", AC4:null,AC4w:"", AC5:null,AC5w:"",
+  // cash
+  C1:[],C1w:"", C2:null,C2w:"", C3:null,C3w:"", C4:null,C4w:"",
+  // cross
+  X1:[],X1w:"", X2:null,X2w:"", X3:[],X3w:"", X4:"",
+};
+
+/* --------------------------- BENCHMARKS ---------------------------- */
+/* Synthesized from 3 sources (Gemini, ChatGPT, Claude Desktop), Adam-approved 6/13/26.
+   gm/net/rpp are [low,high]. rpp = revenue per EMPLOYEE ($K), total headcount.
+   netBest = elite net % named in copy. OVERHEAD IS DERIVED (= gm - net), never stored,
+   so the triad gm = net + overhead always holds. "healthy" = upper-median..well-run
+   (a deliberate target above the industry average — the gap is the product).
+   dso keyed by payer (homeowner/gc/insurance/mix) + aspirational targets.
+   gmCommercial => gross interpolates by the owner's commercial mix (S1 GC/commercial %).
+   subHeavy + revNote => rev/employee runs high on a sub-crew model (owner-facing note).
+   tradeNote => owner-facing caveat printed on the report.                              */
+const BLENDED_DSO = {insurance:[75,90], homeowner:[20,40], gc:[45,60], mix:[45,60]};
+function dsoTarget(b){
+  if(b.dso && b.dso.targets){ const p=payerKey(); const t=b.dso.targets;
+    return t[p]!=null? t[p] : (t.mix!=null? t.mix : 45); }
+  return b.dso && b.dso.target ? b.dso.target : 45;
+}
+
+const SUBCREW_NOTE = "Revenue per employee runs high in your trade because production rides on subcontracted crews, not W-2 staff. Read it directionally.";
+const BENCH = {
+  restoration: { label:"Restoration", grade:"SOLID", gm:[50,65], gmCommercial:[30,45], net:[12,18], netBest:20, rpp:[200,300], subHeavy:false,
+    dso:{insurance:[75,90], homeowner:[15,30], gc:[60,80], mix:[45,60], targets:{insurance:60, homeowner:30, gc:45, mix:45}} },
+  plumbing:    { label:"Plumbing", grade:"MODERATE", gm:[50,62], net:[10,18], netBest:20, rpp:[220,350], subHeavy:false,
+    dso:{homeowner:[0,15], gc:[45,90], mix:[30,55], targets:{homeowner:15, gc:45, mix:45}} },
+  hvac:        { label:"HVAC", grade:"MODERATE", gm:[45,55], net:[8,15], netBest:18, rpp:[220,350], subHeavy:false,
+    dso:{homeowner:[0,15], gc:[45,90], mix:[30,55], targets:{homeowner:15, gc:45, mix:45}} },
+  electrical:  { label:"Electrical", grade:"MODERATE", gm:[52,65], gmCommercial:[25,42], net:[8,15], netBest:18, rpp:[200,350], subHeavy:false,
+    dso:{homeowner:[0,15], gc:[45,90], mix:[30,55], targets:{homeowner:10, gc:45, mix:45}} },
+  roofing:     { label:"Roofing", grade:"MODERATE", gm:[30,42], net:[8,15], netBest:15, rpp:[300,500], subHeavy:true, revNote:SUBCREW_NOTE,
+    dso:{homeowner:[0,30], insurance:[60,90], gc:[90,120], mix:[40,75], targets:{homeowner:30, insurance:60, gc:90, mix:55}} },
+  painting:    { label:"Painting", grade:"MODERATE", gm:[35,50], net:[10,15], netBest:18, rpp:[150,250], subHeavy:false,
+    dso:{homeowner:[0,15], gc:[30,83], mix:[20,55], targets:{homeowner:15, gc:45, mix:40}} },
+  landscaping: { label:"Landscaping & Lawn Care", grade:"SOLID", gm:[45,55], net:[10,18], netBest:20, rpp:[140,220], subHeavy:false,
+    tradeNote:"Landscaping margins swing hard with your mix: maintenance routes run lean and high-margin, construction and build work runs heavier and thinner. This read blends them. Your real numbers by division are what the Audit separates out.",
+    dso:{homeowner:[0,15], gc:[45,75], mix:[45,75], targets:{homeowner:15, gc:55, mix:55}} },
+  remodeling:  { label:"Remodeling & Residential GC", grade:"SOLID", gm:[30,42], net:[10,15], netBest:20, rpp:[300,450], subHeavy:true, revNote:SUBCREW_NOTE,
+    dso:{homeowner:[0,15], gc:[60,120], mix:[30,90], targets:{homeowner:0, gc:60, mix:45}} },
+  garage:      { label:"Garage Door", grade:"MODERATE", gm:[50,62], net:[15,20], netBest:25, rpp:[200,330], subHeavy:false,
+    dso:{homeowner:[0,15], gc:[30,83], mix:[20,55], targets:{homeowner:10, gc:45, mix:40}} },
+  pest:        { label:"Pest Control", grade:"MODERATE", gm:[50,58], net:[13,20], netBest:20, rpp:[120,200], subHeavy:false,
+    dso:{homeowner:[0,10], gc:[30,45], mix:[15,40], targets:{homeowner:5, gc:30, mix:20}} },
+  pool:        { label:"Pool & Spa", grade:"MODERATE", gm:[40,55], net:[12,22], netBest:20, rpp:[130,220], subHeavy:false,
+    dso:{homeowner:[0,30], gc:[30,60], mix:[20,50], targets:{homeowner:15, gc:45, mix:30}} },
+  flooring:    { label:"Flooring", grade:"MOD-WEAK", gm:[25,40], net:[5,12], netBest:15, rpp:[220,380], subHeavy:false,
+    dso:{homeowner:[0,15], gc:[60,90], mix:[30,75], targets:{homeowner:10, gc:60, mix:45}} },
+  fencing:     { label:"Fencing & Decks", grade:"MODERATE", gm:[35,48], net:[8,15], netBest:15, rpp:[190,300], subHeavy:false,
+    dso:{homeowner:[0,15], gc:[30,83], mix:[20,55], targets:{homeowner:10, gc:45, mix:40}} },
+  windows:     { label:"Windows, Doors & Exteriors", grade:"MODERATE", gm:[25,40], net:[5,10], netBest:10, rpp:[260,450], subHeavy:false,
+    dso:{homeowner:[0,15], gc:[30,83], mix:[20,55], targets:{homeowner:10, gc:45, mix:40}} },
+  solar:       { label:"Solar", grade:"WEAK", gm:[15,35], net:[5,10], netBest:10, rpp:[450,700], subHeavy:false,
+    tradeNote:"Solar is in a market contraction right now. Flat or down revenue is the trade itself, not a failure of your business, so we read your other legs accordingly.",
+    dso:{homeowner:[20,45], gc:[45,90], mix:[30,60], targets:{homeowner:30, gc:60, mix:45}} },
+  cleaning:    { label:"Cleaning Services", grade:"MODERATE", gm:[40,55], net:[8,16], netBest:20, rpp:[70,130], subHeavy:false,
+    dso:{homeowner:[0,15], gc:[30,55], mix:[20,45], targets:{homeowner:5, gc:40, mix:30}} },
+};
+
+const TRADES = [
+  ["restoration","Restoration"],["plumbing","Plumbing"],["hvac","HVAC"],["electrical","Electrical"],
+  ["roofing","Roofing"],["painting","Painting"],["landscaping","Landscaping & Lawn Care"],
+  ["remodeling","Remodeling & Residential GC"],["garage","Garage Door"],["pest","Pest Control"],
+  ["pool","Pool & Spa"],["flooring","Flooring"],["fencing","Fencing & Decks"],
+  ["windows","Windows, Doors & Exteriors"],["solar","Solar"],["cleaning","Cleaning Services"],
+  ["other","Other"]
+];
+const PAYERS = [
+  ["insurance","Insurance carriers or program work"],
+  ["homeowner","Homeowners direct"],
+  ["gc","GCs and commercial accounts"],
+  ["mix","A real mix"]
+];
+const FIRE_LABELS=["The phone won't stop. Everything routes to me.","People problems. No-shows, drama, turnover.","Cash feels tight even when we're busy.","Jobs sliding on schedule.","Callbacks and rework.","Billing and paperwork backlog.","We turn down work we could take if we had the people."];
+
+/* ----------------------------- HELPERS ----------------------------- */
+const $ = (s,r=document)=>r.querySelector(s);
+const el = (tag,cls,html)=>{const e=document.createElement(tag); if(cls)e.className=cls; if(html!=null)e.innerHTML=html; return e;};
+const money = n => { if(n==null||isNaN(n)) return "—"; const a=Math.abs(n);
+  if(a>=1e6) return "$"+(n/1e6).toFixed(a>=1e7?1:2).replace(/\.0$/,"")+"M";
+  if(a>=1e3) return "$"+Math.round(n/1e3)+"K"; return "$"+Math.round(n); };
+const isOther = ()=> S.A1==="other" || (S.A1w.trim() && !S.A1);
+function bench(){ return BENCH[S.A1] || null; }
+function noBench(){ return isOther() || !bench(); }
+function payerKey(){ return S.A2 || "mix"; }
+function dsoBand(){ const b=bench(); if(!b) return BLENDED_DSO.mix;
+  const p=payerKey();
+  if(b.dso && b.dso[p]) return b.dso[p];
+  if(b.dso && b.dso.mix) return b.dso.mix;
+  return BLENDED_DSO.mix; }
+
+/* commercial share of work, from S1 (GC/commercial revenue line); A2 bucket as fallback */
+function commercialShare(){
+  const keys=["ref","rep","ins","gc","ad","out"];
+  let tot=keys.reduce((s,k)=>s+(parseFloat(S.S1[k])||0),0)+(parseFloat(S.S1.other)||0);
+  if(tot>0) return Math.max(0,Math.min(1,(parseFloat(S.S1.gc)||0)/tot));
+  if(S.A2==="gc") return 1; if(S.A2==="mix") return 0.5; return 0;
+}
+/* gross-margin band; for mix-sensitive trades it slides between residential and
+   commercial by the owner's commercial share (electrical, restoration) */
+function gmBand(){ const b=bench(); if(!b) return null;
+  if(!b.gmCommercial) return {band:b.gm, commercial:false, share:0};
+  const s=commercialShare();
+  const lo=Math.round(b.gm[0]*(1-s)+b.gmCommercial[0]*s);
+  const hi=Math.round(b.gm[1]*(1-s)+b.gmCommercial[1]*s);
+  return {band:[lo,hi], commercial:s>=0.4, share:s}; }
+/* overhead is DERIVED from the triad: healthy gross minus healthy net, as a range */
+function overheadBand(){ const b=bench(); const gmb=gmBand(); if(!b||!gmb) return null;
+  const a=gmb.band[0]-b.net[0], z=gmb.band[1]-b.net[1];
+  return [Math.min(a,z), Math.max(a,z)]; }
+
+/* grade-curve calibration (Adam 6/13): map the raw blended 0-100 onto the school-grade
+   distribution — average ~70, decent 70-80, solid 80-90, very strong ~90, excellent ~95
+   (never 100), failing <60, in-distress <50, bankrupt floor ~35. Anchors, interpolated. */
+const SCORE_CURVE = [[0,30],[20,42],[40,55],[61,70],[77,79],[88,89],[100,95]];
+function calibrate(raw){
+  const x=Math.max(0,Math.min(100,raw));
+  for(let i=1;i<SCORE_CURVE.length;i++){
+    const a=SCORE_CURVE[i-1], b2=SCORE_CURVE[i];
+    if(x<=b2[0]) return Math.round(a[1] + (x-a[0])/(b2[0]-a[0])*(b2[1]-a[1]));
+  }
+  return Math.round(SCORE_CURVE[SCORE_CURVE.length-1][1]);
+}
+
+/* ------------------------------ SAVE ------------------------------- */
+const SAVE_KEY = "pf_scan_v2"; // v2: X1 options re-indexed 6/12 — stale v1 saves must not restore
+function save(){ try{ localStorage.setItem(SAVE_KEY, JSON.stringify(S)); }catch(e){} }
+function restore(){ try{ const d=localStorage.getItem(SAVE_KEY); if(!d) return;
+  const o=JSON.parse(d); if(o && typeof o==="object") Object.assign(S,o); }catch(e){} }
+
+/* ============================ RENDER ROOT ========================== */
+function render(){
+  save();
+  const app = $("#app");
+  app.innerHTML = "";
+  const tb = $("#topbar");
+  // progress: pages 1..6 are questions; 0 cover; 7 report
+  if(S.page>=1 && S.page<=6){
+    tb.classList.remove("hidden");
+    const pct = Math.round(S.page/7*100);
+    $("#gaugeFill").style.width = pct+"%";
+    $("#pctLabel").textContent = pct+"%";
+  } else { tb.classList.add("hidden"); }
+
+  if(S.page===0) renderCover(app);
+  else if(S.page===1) renderBasics(app);
+  else if(S.page===2) renderSales(app);
+  else if(S.page===3) renderOps(app);
+  else if(S.page===4) renderAcc(app);
+  else if(S.page===5) renderCash(app);
+  else if(S.page===6) renderCross(app);
+  else if(S.page===7) renderReport(app);
+}
+/* scroll to top ONLY on page change, never on in-page re-renders (answer clicks) */
+function go(p){ S.page=p; render(); window.scrollTo(0,0); }
+
+/* ----------------------------- COVER ------------------------------- */
+function chassisSVG(opts){
+  // opts: {legs:[{h,color}], tilt} — neutral cover when no opts
+  const L = opts && opts.legs;
+  const tilt = opts && opts.tilt || 0;
+  const names=["SALES","OPS","ACCT","CASH"];
+  const baseH=[60,60,60,60];
+  const colors=["var(--steel)","var(--steel)","var(--steel)","var(--steel)"];
+  let legs="";
+  const xs=[58,118,178,238];
+  for(let i=0;i<4;i++){
+    const h = L? L[i].h : baseH[i];
+    const c = L? L[i].color : colors[i];
+    const y = 92 + (60-h);
+    legs += `<rect x="${xs[i]-7}" y="${y}" width="14" height="${h}" rx="3" fill="${c}" opacity="${L? 1:.85}"/>`;
+    legs += `<text x="${xs[i]}" y="${y+h+16}" text-anchor="middle" font-family="IBM Plex Mono" font-size="11" letter-spacing="1" fill="${L? c:'var(--text-faint)'}">${names[i]}</text>`;
+  }
+  return `<svg viewBox="0 0 296 190" width="100%" style="max-width:340px" role="img" aria-label="Four-leg business chassis: sales, operations, accounting, cash">
+    <g transform="rotate(${tilt} 148 86)">
+      <rect x="34" y="74" width="228" height="14" rx="4" fill="var(--paper)" opacity=".92"/>
+      <rect x="34" y="74" width="228" height="3" rx="2" fill="var(--ember)" opacity=".5"/>
+    </g>
+    ${legs}
+  </svg>`;
+}
+
+function renderCover(app){
+  const w = el("div","wrap");
+  const stage = el("div","stage cover");
+  stage.innerHTML = `
+    <div class="brand">
+      <svg class="mk" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c2 5-1 6 0 9 3-1 4-4 4-4 3 4 4 7 4 10a8 8 0 1 1-16 0c0-4 3-7 4-9 1 2 2 2 2 2 0-3 0-6-2-8z" fill="var(--ember)"/></svg>
+      <div class="nm">PROFIT &amp; <span>FIRES</span> SCAN</div>
+      <div class="by">By Adam Redhead</div>
+    </div>
+    <div class="hero">
+      <span class="eyebrow">For home services and contracting owners doing $3M to $15M</span>
+      <h1>How much profit are your <span class="heat">fires</span> eating?</h1>
+      <div class="subhead">Rework. Slow collections. Bids nobody chased. Jobs that stall unless you're standing in them. The fires never send you an invoice, but they take their cut. This scan reads <b>Sales, Operations, Accounting, and Cash</b> as one system, and gives you back what the fires cost and the one place to start.</div>
+      <div class="cta-row">
+        <button class="btn" id="startBtn">Start the scan <span class="arw">→</span></button>
+        <div class="cta-meta">
+          <span><b>31 questions</b> · about 7 minutes · nothing to look up</span>
+          <span>Gut answers beat perfect answers. No email required to see your results.</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer"><span>NRR MANAGEMENT LLC</span><span>A FOUR-LEG READ: SALES · OPS · ACCT · CASH</span></div>
+  `;
+  w.appendChild(stage); app.appendChild(w);
+  $("#startBtn").onclick = ()=>go(1);
+}
+
+/* --------------------- generic question builders ------------------- */
+function ladder(key, qnum, qtext, hint, opts){
+  const q = el("div","q");
+  let h = `<div class="qnum">${qnum}</div><div class="qtext">${qtext}</div>`;
+  if(hint) h += `<div class="qhint">${hint}</div>`;
+  h += `<div class="opts">`;
+  opts.forEach((o,i)=>{
+    const sel = S[key]===i ? " sel":"";
+    h += `<div class="opt${sel}" data-i="${i}" tabindex="0" role="button" aria-pressed="${S[key]===i}"><div class="mark"></div><div class="txt">${o}</div></div>`;
+  });
+  h += `</div>`;
+  h += `<div class="sayit"><label>Or say it your way</label><input type="text" maxlength="80" placeholder="optional" value="${esc(S[key+'w'])}" data-w="1"></div>`;
+  q.innerHTML = h;
+  q.querySelectorAll(".opt").forEach(o=>{
+    const pick = ()=>{ S[key] = (S[key]===+o.dataset.i)? null : +o.dataset.i; render(); };
+    o.onclick = pick;
+    o.onkeydown = e=>{ if(e.key==="Enter"||e.key===" "){e.preventDefault(); pick();} };
+  });
+  q.querySelector("[data-w]").oninput = e=>{ S[key+'w']=e.target.value;
+    // typing a write-in clears any selected option without a re-render (keeps focus)
+    if(e.target.value.trim() && S[key]!=null){ S[key]=null;
+      q.querySelectorAll(".opt").forEach(x=>{ x.classList.remove("sel"); x.setAttribute("aria-pressed","false"); }); }
+    revalidate(); };
+  return q;
+}
+function multi(key, qnum, qtext, hint, opts, max){
+  const q = el("div","q");
+  const cur = S[key];
+  let h = `<div class="qnum">${qnum}</div><div class="qtext">${qtext}</div>`;
+  if(hint) h += `<div class="qhint">${hint}</div>`;
+  h += `<div class="opts">`;
+  opts.forEach((o,i)=>{
+    const on = cur.includes(i);
+    const maxed = (!on && max && cur.length>=max) ? " maxed":"";
+    h += `<div class="opt multi${on?' sel':''}${maxed}" data-i="${i}" tabindex="0" role="button" aria-pressed="${on}"><div class="mark"></div><div class="txt">${o}</div></div>`;
+  });
+  h += `</div>`;
+  if(max) h += `<div class="pickcap">Pick up to ${max}${cur.length?` · ${cur.length} selected`:""}</div>`;
+  h += `<div class="sayit"><label>Or say it your way</label><input type="text" maxlength="80" placeholder="optional" value="${esc(S[key+'w'])}" data-w="1"></div>`;
+  q.innerHTML = h;
+  q.querySelectorAll(".opt").forEach(o=>{
+    const i=+o.dataset.i;
+    const pick=()=>{
+      const arr=S[key]; const at=arr.indexOf(i);
+      if(at>=0) arr.splice(at,1);
+      else { if(max && arr.length>=max) return; arr.push(i); }
+      render();
+    };
+    o.onclick=pick;
+    o.onkeydown=e=>{ if(e.key==="Enter"||e.key===" "){e.preventDefault(); pick();} };
+  });
+  q.querySelector("[data-w]").oninput=e=>{ S[key+'w']=e.target.value; revalidate(); };
+  return q;
+}
+function esc(s){ return (s||"").replace(/"/g,"&quot;").replace(/</g,"&lt;"); }
+
+/* write-ins count as answers: never a dead end, scored mid per spec */
+const answered = k => S[k]!=null || ((S[k+"w"]||"").trim().length>0);
+/* per-question score overrides for options that sit off the 0-3 ladder */
+const SCORE_MAP = { S5:[0,1,2,3,2] }; // S5 option 5 (Xactimate/set pricing): disciplined list, but not yours to hold -> 2
+const lv = k => { if(S[k]!=null){ const m=SCORE_MAP[k]; return (m && m[S[k]]!=null) ? m[S[k]] : S[k]; }
+  return (((S[k+"w"]||"").trim())) ? 1.5 : 0; };
+let pageValidator = null;
+function revalidate(){
+  if(!pageValidator) return;
+  const v = pageValidator();
+  const c = document.getElementById("navCont"); if(c) c.disabled = !v;
+  const hn = document.getElementById("navHint"); if(hn) hn.style.display = v ? "none":"block";
+}
+function writeIns(){
+  const keys=["S1w","S2w","S3w","S4w","S5w","O1w","O2w","O3w","O4w","O5w","AC1w","AC2w","AC3w","AC4w","AC5w","C1w","C2w","C3w","C4w","X1w","X2w","X3w"];
+  return keys.map(k=>(S[k]||"").trim()).filter(Boolean);
+}
+
+function intro(parent, tag, h2, p){
+  const s = el("div","section-intro");
+  s.innerHTML = `<span class="leg-tag"><span class="dot"></span>${tag}</span><h2>${h2}</h2><p>${p}</p>`;
+  parent.appendChild(s);
+}
+function nav(parent, backTo, contLabel, validFn, hintText){
+  pageValidator = validFn;
+  const valid = validFn();
+  const row = el("div","navrow");
+  const back = el("button","btn back","Back");
+  back.onclick=()=>go(backTo);
+  const cont = el("button","btn","");
+  cont.id="navCont";
+  cont.innerHTML = `${contLabel} <span class="arw">→</span>`;
+  cont.disabled = !valid;
+  cont.onclick=()=>{ if(pageValidator()) go(S.page+1); };
+  row.appendChild(back); row.appendChild(cont);
+  parent.appendChild(row);
+  const hint = el("div","small", hintText || "Answer the questions above to keep moving. A write-in counts as an answer. Tap “not sure” on any number you can't say.");
+  hint.id="navHint";
+  hint.style.marginTop="12px"; hint.style.textAlign="center"; hint.style.color="var(--text-faint)";
+  hint.style.display = valid ? "none" : "block";
+  parent.appendChild(hint);
+}
+
+/* ----------------------------- BASICS ------------------------------ */
+function typedField(key, pre, suf, ph, ns){
+  const wrap = el("div","typed");
+  const f = el("div","field");
+  let inner = "";
+  if(pre) inner += `<span class="pre">${pre}</span>`;
+  inner += `<input type="number" inputmode="decimal" step="any" min="0" placeholder="${ph}" />`;
+  if(suf) inner += `<span class="suf">${suf}</span>`;
+  f.innerHTML = inner;
+  const input = f.querySelector("input");
+  input.value = (S[key]!=null? S[key]:"");
+  input.disabled = S[ns];
+  if(S[ns]) f.style.opacity=".4";
+  input.oninput = e=>{ const v=e.target.value; const n=parseFloat(v);
+    S[key]= (v===""||isNaN(n))? null : Math.max(0,n); revalidate(); };
+  wrap.appendChild(f);
+  const btn = el("button","notsure"+(S[ns]?" on":""), S[ns]?"not sure ✓":"honestly not sure");
+  btn.onclick=()=>{ S[ns]=!S[ns]; if(S[ns]) S[key]=null; render(); };
+  wrap.appendChild(btn);
+  return wrap;
+}
+function renderBasics(app){
+  const w=el("div","wrap"); const st=el("div","stage"); w.appendChild(st);
+  intro(st,"01 · The basics","Eight quick numbers, straight from the driver's seat.",
+    "Approximate is fine. If you can't say one without looking, tap “not sure” and keep moving. That's not a wrong answer. It's information.");
+
+  // A1 trade
+  const qa1 = el("div","q");
+  qa1.innerHTML = `<div class="qnum">A1</div><div class="qtext">Your trade?</div><div class="opts" id="a1opts"></div>
+    <div class="sayit"><label>Or say it your way</label><input type="text" maxlength="80" placeholder="optional" value="${esc(S.A1w)}" data-w></div>`;
+  const a1o = qa1.querySelector("#a1opts");
+  a1o.style.display="grid"; a1o.style.gridTemplateColumns="1fr 1fr"; a1o.style.gap="8px";
+  TRADES.forEach(([k,lbl])=>{
+    const o=el("div","opt"+(S.A1===k?" sel":""));
+    o.innerHTML=`<div class="mark"></div><div class="txt">${lbl}</div>`;
+    o.onclick=()=>{ S.A1 = (S.A1===k)? "" : k; render(); };
+    a1o.appendChild(o);
+  });
+  qa1.querySelector("[data-w]").oninput=e=>{ S.A1w=e.target.value;
+    if(e.target.value.trim() && S.A1){ S.A1=""; qa1.querySelectorAll(".opt").forEach(x=>x.classList.remove("sel")); }
+    revalidate(); };
+  st.appendChild(qa1);
+
+  // A2 payer
+  const qa2 = el("div","q");
+  qa2.innerHTML = `<div class="qnum">A2</div><div class="qtext">Who pays you, mostly?</div><div class="opts" id="a2opts"></div>
+    <div class="sayit"><label>Or say it your way</label><input type="text" maxlength="80" placeholder="optional" value="${esc(S.A2w)}" data-w></div>`;
+  const a2o=qa2.querySelector("#a2opts");
+  PAYERS.forEach(([k,lbl])=>{
+    const o=el("div","opt"+(S.A2===k?" sel":""));
+    o.innerHTML=`<div class="mark"></div><div class="txt">${lbl}</div>`;
+    o.onclick=()=>{ S.A2 = (S.A2===k)? "" : k; render(); };
+    a2o.appendChild(o);
+  });
+  qa2.querySelector("[data-w]").oninput=e=>{ S.A2w=e.target.value;
+    if(e.target.value.trim() && S.A2){ S.A2=""; qa2.querySelectorAll(".opt").forEach(x=>x.classList.remove("sel")); }
+    revalidate(); };
+  st.appendChild(qa2);
+
+  // A3..A8 typed
+  const tdefs = [
+    ["A3","A3ns","Revenue, last 12 months, roughly?","$","M","9.5"],
+    ["A4","A4ns","How many people, counting steady subs?","","people","27"],
+    ["A5","A5ns","Gross margin, best guess? (left after labor + materials on the work itself)","","%","38"],
+    ["A6","A6ns","Net margin, best guess? (what hits the bottom line)","","%","7"],
+    ["A7","A7ns","Revenue about 3 years ago, roughly?","$","M","6"],
+    ["A8","A8ns","Job done to money in the bank, typically?","","days","75"],
+  ];
+  tdefs.forEach(([key,ns,label,pre,suf,ph])=>{
+    const q=el("div","q");
+    q.innerHTML=`<div class="qnum">${key}</div><div class="qtext">${label}</div><div class="qhint">Approximate is fine.</div>`;
+    q.appendChild(typedField(key,pre,suf,ph,ns));
+    st.appendChild(q);
+  });
+
+  function basicsValid(){
+    const trade = !!S.A1 || S.A1w.trim().length>0;
+    const payer = !!S.A2 || S.A2w.trim().length>0;
+    const nums = [["A3","A3ns"],["A4","A4ns"],["A5","A5ns"],["A6","A6ns"],["A7","A7ns"],["A8","A8ns"]]
+      .every(([k,n])=> S[k]!=null || S[n]);
+    return trade && payer && nums;
+  }
+  nav(st,0,"Continue to Sales",basicsValid,
+    "Every number needs a value or a “not sure” tap. Approximate is fine. Gut answers beat perfect answers.");
+  st.appendChild(footer());
+  app.appendChild(w);
+}
+
+/* ------------------------------ SALES ------------------------------ */
+function renderSales(app){
+  const w=el("div","wrap"); const st=el("div","stage"); w.appendChild(st);
+  intro(st,"Leg 01 · Sales","Where the work comes from.",
+    "No sales, no profit. Everything downstream starts here.");
+
+  // S1 mix
+  const q1=el("div","q");
+  const rows=[
+    ["out","Business development / a sales team hunting outbound"],
+    ["ref","Customer referrals and word of mouth"],
+    ["rep","Repeat customers / service agreements"],
+    ["ins","Insurance programs / TPAs"],["gc","GC and commercial relationships"],
+    ["ad","Online, ads, lead services"]
+  ];
+  let h=`<div class="qnum">S1</div><div class="qtext">Roughly how does your new work split?</div>
+    <div class="qhint">Quick gut math, in rough tens. It doesn't need to add up perfectly.</div>`;
+  rows.forEach(([k,lbl])=>{
+    h+=`<div class="mix-row"><div class="lbl">${lbl}</div><div class="pctin"><input type="number" inputmode="numeric" placeholder="0" data-mk="${k}" value="${S.S1[k]}"><span class="suf">%</span></div></div>`;
+  });
+  h+=`<div class="mix-row"><div class="lbl"><input type="text" maxlength="80" placeholder="Or say it your way" value="${esc(S.S1w)}" data-other></div><div class="pctin"><input type="number" inputmode="numeric" placeholder="0" data-mk="other" value="${S.S1.other}"><span class="suf">%</span></div></div>`;
+  h+=`<div class="mixtotal">Total: <b id="mixTot">0</b>%</div>`;
+  q1.innerHTML=h;
+  q1.querySelectorAll("[data-mk]").forEach(inp=>{
+    inp.oninput=e=>{ S.S1[e.target.dataset.mk]=e.target.value; updMix(q1); };
+  });
+  q1.querySelector("[data-other]").oninput=e=>{ S.S1w=e.target.value; };
+  st.appendChild(q1); updMix(q1);
+
+  st.appendChild(ladder("S2","S2","If you needed 20% more work next quarter, could you make it happen?","",[
+    "Honestly, no idea how. Work finds us or it doesn't.",
+    "I'd hustle my contacts and hope.",
+    "We have levers, but they're slow and unpredictable.",
+    "We can turn dials and roughly predict what comes out."]));
+  st.appendChild(ladder("S3","S3","Out of every 10 bids you send, do you know how many you win?","",[
+    "No idea. We bid and move on.",
+    "Gut feel, nothing written down.",
+    "We track it, loosely.",
+    "Tracked weekly. The team knows the number like a score."]));
+  st.appendChild(ladder("S4","S4","What happens to bids that don't close right away?","",[
+    "They sit. Nobody goes back.",
+    "Somebody follows up when they remember.",
+    "We follow up, but there's no set schedule.",
+    "Every open bid gets chased on a schedule until it's a yes or a no."]));
+  st.appendChild(ladder("S5","S5","How were your prices set?","",[
+    "Off what competitors charge.",
+    "Cost plus a markup I haven't revisited in a while.",
+    "Off real job costs, updated once in a while.",
+    "Off real job costs, reviewed often, and we hold the line.",
+    "Xactimate or set pricing. The price list is set for us."]));
+
+  nav(st,1,"Continue to Operations",()=>["S2","S3","S4","S5"].every(answered));
+  st.appendChild(footer());
+  app.appendChild(w);
+}
+function updMix(q){
+  const keys=["ref","rep","ins","gc","ad","out","other"];
+  let t=0; keys.forEach(k=>{ t+=(parseFloat(S.S1[k])||0); });
+  const tot=q.querySelector("#mixTot"); if(tot){ tot.textContent=Math.round(t);
+    tot.style.color = (t>=80&&t<=120)?"var(--strong)":"var(--text-dim)"; }
+}
+
+/* --------------------------- OPERATIONS ---------------------------- */
+function renderOps(app){
+  const w=el("div","wrap"); const st=el("div","stage"); w.appendChild(st);
+  intro(st,"Leg 02 · Operations","How the work gets done once it's sold.",
+    "And how much of it rides on your back.");
+  st.appendChild(ladder("O1","O1","How does work get scheduled and tracked?","",[
+    "My head, my phone, and text messages.",
+    "A whiteboard or spreadsheet.",
+    "Software, but only because I babysit it.",
+    "A system the team runs without me in it."]));
+  st.appendChild(ladder("O2","O2","Do your teams meet on a set rhythm with real numbers?","",[
+    "No set rhythm. We talk when something's burning.",
+    "I talk to my leads most days. Loose and verbal.",
+    "Weekly meetings happen. Numbers sometimes make it in.",
+    "Every team, set cadence, a scoreboard they own."]));
+  st.appendChild(ladder("O3","O3","How often does finished work come back on you?","Callbacks, rework, punch-list drag.",[
+    "More than I want to admit.",
+    "It happens. I couldn't tell you a pattern.",
+    "Rare, and we write them down.",
+    "Rare, logged, and we chase the cause until it stops."]));
+  st.appendChild(ladder("O4","O4","How much of the daily work runs through you personally?","",[
+    "Almost all of it. I'm the glue.",
+    "The big stuff and most of the fires.",
+    "Key decisions only.",
+    "The system runs. I coach it."]));
+  st.appendChild(ladder("O5","O5","How far out are you booked?","Work on the books plus work you're confident is coming.",[
+    "Under two weeks. We live hand to mouth.",
+    "Two to six weeks.",
+    "Two to four months. Where most contractors want to live.",
+    "Booked past that, and we manage the backlog."]));
+  nav(st,2,"Continue to Accounting",()=>["O1","O2","O3","O4","O5"].every(answered));
+  st.appendChild(footer()); app.appendChild(w);
+}
+
+/* --------------------------- ACCOUNTING ---------------------------- */
+function renderAcc(app){
+  const w=el("div","wrap"); const st=el("div","stage"); w.appendChild(st);
+  intro(st,"Leg 03 · Accounting","The leg most owners skip.",
+    "It decides whether all that work turns into margin you can see, trust, and keep.");
+  st.appendChild(ladder("AC1","AC1","Do you know which jobs made money and which didn't, last month?","",[
+    "No idea. I look at the bank balance.",
+    "Overall yes. By job, no.",
+    "By job, roughly, after the fact.",
+    "By job, close to live, and we act on the gaps."]));
+  st.appendChild(multi("AC2","AC2","When a job makes less than it should, what's usually the story?","Pick up to 3.",[
+    "We bid it too tight. The estimate missed.",
+    "Labor ran over. More hours than the job was worth.",
+    "Material prices moved and we ate the difference.",
+    "We did extra work and never charged for it.",
+    "Callbacks and warranty work eat the tail end.",
+    "We discounted to win it.",
+    "Honestly, I don't know. I find out too late to say."],3));
+  st.appendChild(ladder("AC3","AC3","When a job grows mid-stream, what happens?","Scope creep, surprises, extras.",[
+    "We usually eat it. Keeping the customer happy wins.",
+    "We charge when it's big enough to hurt.",
+    "We capture and bill it, most of the time.",
+    "Every change gets priced and approved before the work."]));
+  st.appendChild(ladder("AC4","AC4","When labor or material costs jump, how fast does pricing follow?","",[
+    "It doesn't. Prices are where they've always been.",
+    "Eventually, after the margin pain shows up.",
+    "About once a year.",
+    "Fast. Pricing tracks costs as they move."]));
+  st.appendChild(ladder("AC5","AC5","If you wanted numbers you trust, right now, today?","",[
+    "They don't exist. Tax time is when I find out.",
+    "My books run a month or two behind.",
+    "Books close monthly. I look when something feels off.",
+    "Books close monthly, someone walks me through them, and decisions follow the numbers."]));
+  nav(st,3,"Continue to Cash",()=>["AC1","AC3","AC4","AC5"].every(answered));
+  st.appendChild(footer()); app.appendChild(w);
+}
+
+/* ------------------------------ CASH ------------------------------- */
+function renderCash(app){
+  const w=el("div","wrap"); const st=el("div","stage"); w.appendChild(st);
+  intro(st,"Leg 04 · Cash","Profit is an opinion until it's cash.",
+    "This leg is whether the money you earned becomes money you can use.");
+  st.appendChild(multi("C1","C1","Where's the slow point between finished work and money in the bank?","Pick up to 2.",[
+    "Our own invoicing lags. Work's done, bill goes out late.",
+    "The payer is just slow. Carriers, GCs, you wait.",
+    "Approvals and disputes drag it out.",
+    "Retention gets held and sits.",
+    "Nobody chases past-due consistently. Invoices age quietly.",
+    "Cash isn't really our problem."],2));
+  st.appendChild(ladder("C2","C2","How do you bill the work?","",[
+    "Invoice at the end, then wait.",
+    "Mostly at completion. Deposits here and there.",
+    "Deposits or progress billing on the bigger jobs.",
+    "Deposits and progress billing standard. The job funds itself."]));
+  st.appendChild(ladder("C3","C3","Who chases the money?","",[
+    "Nobody, really. We invoice and hope.",
+    "Me, when it gets bad enough.",
+    "Office staff, when they have time.",
+    "It's somebody's job, on a weekly rhythm."]));
+  st.appendChild(ladder("C4","C4","If revenue dropped 30% for 90 days?","",[
+    "That could put me under.",
+    "Very tight, very fast.",
+    "I'd manage.",
+    "Fine. We hold a real reserve."]));
+  nav(st,4,"Continue to the last page",()=>["C2","C3","C4"].every(answered));
+  st.appendChild(footer()); app.appendChild(w);
+}
+
+/* ------------------------------ CROSS ------------------------------ */
+function renderCross(app){
+  const w=el("div","wrap"); const st=el("div","stage"); w.appendChild(st);
+  intro(st,"Last page · You and the fires","These aren't about the business.",
+    "They're about what it's doing to you.");
+  st.appendChild(multi("X1","X1","Which of these still need YOU personally, or they don't happen right?","Pick all that apply.",[
+    "Driving leads. Making the phone ring.",
+    "Selling and closing the bigger jobs",
+    "Estimating and pricing",
+    "Scheduling and dispatch",
+    "Final quality. The walk, the punch list.",
+    "Chasing money",
+    "Hiring and people problems",
+    "Honestly? Most decisions still route through me."],null));
+  st.appendChild(ladder("X2","X2","If you went dark for two weeks, what breaks FIRST?","",[
+    "New sales stop.",
+    "Jobs stall or quality slips.",
+    "Billing and collections stall.",
+    "Nothing breaks. And I can prove it. I've done it."]));
+  st.appendChild(multi("X3","X3","Which of these fires hit your week, most weeks?","Pick all that apply.",[
+    "The phone won't stop. Everything routes to me.",
+    "People problems. No-shows, drama, turnover.",
+    "Cash feels tight even when we're busy.",
+    "Jobs sliding on schedule.",
+    "Callbacks and rework.",
+    "Billing and paperwork backlog.",
+    "We turn down work we could take if we had the people."],null));
+
+  // X4 single line
+  const q4=el("div","q");
+  q4.innerHTML=`<div class="qnum">X4</div><div class="qtext">Last one: what's the one fire you'd put out first if you could?</div><div class="qhint">One line, optional.</div>
+    <input type="text" maxlength="80" placeholder="Type it here…" value="${esc(S.X4)}" data-x4>`;
+  q4.querySelector("[data-x4]").oninput=e=>{ S.X4=e.target.value; };
+  st.appendChild(q4);
+
+  const validFn = ()=> answered("X2");
+  pageValidator = validFn;
+  const row=el("div","navrow");
+  const back=el("button","btn back","Back"); back.onclick=()=>go(5);
+  const cont=el("button","btn","");
+  cont.id="navCont";
+  cont.innerHTML=`See my results <span class="arw">→</span>`;
+  cont.disabled=!validFn(); cont.onclick=()=>{ if(pageValidator()) go(7); };
+  row.appendChild(back); row.appendChild(cont); st.appendChild(row);
+  const hint=el("div","small","Answer the “what breaks first” question to read your report. The rest of this page is optional.");
+  hint.id="navHint";
+  hint.style.marginTop="12px"; hint.style.textAlign="center"; hint.style.color="var(--text-faint)";
+  hint.style.display = validFn()? "none":"block";
+  st.appendChild(hint);
+  st.appendChild(footer()); app.appendChild(w);
+}
+
+function footer(){
+  const f=el("div","footer");
+  f.innerHTML=`<span>PROFIT &amp; FIRES SCAN</span><span>BALLPARK IS THE LAW</span>`;
+  return f;
+}
+
+/* ====================================================================
+   ENGINE — compute the report object
+   ==================================================================== */
+function compute(){
+  const b = bench();
+  const nb = noBench();
+  const r = { nb, b };
+
+  // ---- leg raw scores ----
+  const salesRaw = lv("S2")+lv("S3")+lv("S4")+lv("S5");           // /12
+  // restoration is emergency-response: open capacity is the model, so booked-out (O5)
+  // doesn't count toward the ops score — handled in analysis, not with its own question
+  const emergency = (S.A1==="restoration");
+  r.emergency = emergency;
+  const opsRaw   = lv("O1")+lv("O2")+lv("O3")+lv("O4") + (emergency? 0 : lv("O5")); // /12 or /15
+  const accRaw   = lv("AC1")+lv("AC3")+lv("AC4")+lv("AC5");       // /12
+
+  // cash with A8 modifier
+  let cashRaw = lv("C2")+lv("C3")+lv("C4");                       // /9 base
+  let a8mod = 0;
+  const band = dsoBand();
+  if(!nb && !S.A8ns && S.A8!=null){
+    if(S.A8 > band[1]+30) a8mod=-1;
+    else if(S.A8 < band[0]) a8mod=+1;
+  }
+  cashRaw = Math.max(0, Math.min(9, cashRaw + a8mod));
+
+  // operational maturity sub-scores (from the ladder questions only)
+  const salesPct = salesRaw/12*100;
+  const opsPct   = opsRaw/(emergency?12:15)*100;
+  const accPct   = accRaw/12*100;
+  const cashPct  = cashRaw/9*100;
+  // legs / overall / archetype / shortest are assembled at the END of compute(),
+  // because the score now BLENDS maturity with financial health (Adam 6/13) and the
+  // financials aren't computed until below.
+
+  // ---- numbers ----
+  const rev = (!S.A3ns && S.A3!=null)? S.A3*1e6 : null;
+  r.rev = rev;
+  r.dollarsOff = (rev==null); // A3 not sure → dollar blocks off
+  const ppl = (!S.A4ns && S.A4!=null)? S.A4 : null;
+  r.rpp = (rev!=null && ppl)? rev/ppl : null;
+
+  // GM / net with estimate handling
+  r.gmTyped = (!S.A5ns && S.A5!=null);
+  r.netTyped = (!S.A6ns && S.A6!=null);
+  r.gm = r.gmTyped? S.A5 : estimateGM();
+  r.net = r.netTyped? S.A6 : estimateNet();
+  r.bothBlind = (!r.gmTyped && !r.netTyped);
+
+  // growth
+  r.growth = null; r.declining=false;
+  if(!S.A3ns && S.A3!=null && !S.A7ns && S.A7!=null && S.A7>0){
+    r.growth = Math.pow(S.A3/S.A7, 1/3)-1;
+    r.declining = r.growth<0;
+  }
+  r.growthTier = growthTier(r.growth, rev);
+
+  // cash posture
+  const cashTight = S.X3.includes(2); // "Cash feels tight even when we're busy"
+  const a8Worse = (!nb && !S.A8ns && S.A8!=null && S.A8 > band[1]);
+  const a8Fast  = (!S.A8ns && S.A8!=null && S.A8 <= band[1]); // collections land on time
+  const c4 = lv("C4");
+  // a low reserve answer alone isn't "tight" if collections are fast and no cash-fire was flagged
+  r.cashPosture = ((c4<=1 && !(a8Fast && !cashTight)) || (cashTight && a8Worse)) ? "TIGHT"
+                : (c4===3 && !cashTight) ? "STRONG" : "OK";
+  r.cashTight = cashTight;
+
+  // effective job-to-cash days: typed, or estimated from billing structure on "not sure"
+  // (spec: "not sure" is never a dead end — estimate, flag, keep the line alive)
+  if(!S.A8ns && S.A8!=null){ r.a8 = S.A8; r.a8Est = false; }
+  else if(S.A8ns && !nb){
+    const c2 = Math.min(3, Math.max(0, lv("C2")));
+    r.a8 = Math.round(band[1] - (c2/3)*(band[1]-band[0]));
+    r.a8Est = true;
+  } else { r.a8 = null; r.a8Est = S.A8ns; }
+
+  // dependency
+  const catchAll = S.X1.includes(7); // "most decisions still route through me" — last of 8 options
+  r.depScore = catchAll? 7 : S.X1.length;
+  r.catchAll = catchAll;
+
+  // benchmarks for glance
+  if(!nb){
+    const gmb = gmBand();
+    r.gmBand = gmb.band; r.gmCommercial = gmb.commercial;
+    r.netBand = b.net; r.netBest = b.netBest||null; r.rppBand = b.rpp; r.overheadBand = overheadBand();
+    r.dsoBand = band; r.dsoTarget = dsoTarget(b); r.subHeavy = b.subHeavy;
+    r.revNote = b.revNote||null; r.tradeNote = b.tradeNote||null;
+  }
+
+  // ---- blend operational maturity with FINANCIAL HEALTH into each leg (Adam 6/13) ----
+  // Financials carry real weight (FIN_W). The gap between strong numbers and loose
+  // systems becomes the "room to improve" story instead of a contradiction.
+  const FIN_W = 0.5;
+  const finHi=(x,bnd)=>{ if(x==null||!bnd) return null; const lo=bnd[0],hi=bnd[1],sp=Math.max(hi-lo,1);
+    if(x>=hi) return Math.min(100, 90+(x-hi)/sp*10);
+    if(x>=lo) return 70+(x-lo)/sp*20;
+    return Math.max(25, 70-(lo-x)/sp*35); };
+  const finLo=(x,bnd)=>{ if(x==null||!bnd) return null; const lo=bnd[0],hi=bnd[1],sp=Math.max(hi-lo,1);
+    if(x<=lo) return 95;
+    if(x<=hi) return 70+(hi-x)/sp*20;
+    return Math.max(25, 70-(x-hi)/sp*35); };
+  const fin={sales:null, ops:null, acc:null, cash:null};
+  fin.sales = ({FAST:90, INLINE:75, SLOW:55, DECLINING:32}[r.growthTier]) || null;
+  if(!nb && r.rpp!=null && r.rppBand){ let f=finHi(r.rpp/1000, r.rppBand);
+    if(b.subHeavy && f!=null && f<70) f=null; // sub-crew: don't penalize low rev/employee
+    fin.ops=f; }
+  if(!nb && r.netTyped && r.net!=null && r.netBand){ let f=finHi(r.net, r.netBand);
+    if(r.gmTyped && r.gmBand) f=f*0.7 + finHi(r.gm, r.gmBand)*0.3; // net leads, gross seasons
+    fin.acc=f; }
+  if(!nb && !r.a8Est && r.a8!=null && r.dsoBand) fin.cash=finLo(r.a8, r.dsoBand);
+  const blend=(op,f)=> f==null? Math.round(op) : Math.round(op*(1-FIN_W)+f*FIN_W);
+  const salesB=blend(salesPct,fin.sales), opsB=blend(opsPct,fin.ops), accB=blend(accPct,fin.acc), cashB=blend(cashPct,fin.cash);
+  const overallRaw=(salesB+opsB+accB+cashB)/4;
+  const overall=calibrate(overallRaw);   // bend onto Adam's grade curve
+  const verdict=p=>p>=75?"strong":p>=40?"mid":"weak";
+  const legFields=(pct,op,f,raw,max,extra)=>Object.assign({pct, opPct:Math.round(op), fin:f==null?null:Math.round(f), raw, max, v:verdict(pct)}, extra||{});
+  r.legs={
+    sales:legFields(salesB,salesPct,fin.sales,salesRaw,12),
+    ops:legFields(opsB,opsPct,fin.ops,opsRaw,(emergency?12:15)),
+    acc:legFields(accB,accPct,fin.acc,accRaw,12),
+    cash:legFields(cashB,cashPct,fin.cash,cashRaw,9,{a8mod}),
+  };
+  r.overall=overall; r.overallRaw=Math.round(overallRaw);
+  r.arch = overall<50?"FIREFIGHTING": overall<60?"LEAKING": overall<80?"HOLDING":"COMPOUNDING";
+  // financial-vs-operational limiter → drives the reconciliation copy in Block 1
+  const opAvg=(salesPct+opsPct+accPct+cashPct)/4;
+  const fv=[fin.sales,fin.ops,fin.acc,fin.cash].filter(v=>v!=null);
+  const finAvg=fv.length? fv.reduce((a,c)=>a+c,0)/fv.length : null;
+  r.opAvg=Math.round(opAvg); r.finAvg=finAvg==null?null:Math.round(finAvg);
+  // "systems" only when the numbers are genuinely strong (else the copy would lie);
+  // "numbers" only when the systems are genuinely solid.
+  r.limiter = (finAvg!=null && finAvg>=70 && finAvg-opAvg>=12)? "systems"
+            : (finAvg!=null && opAvg>=65 && opAvg-finAvg>=12)? "numbers" : "balanced";
+  // shortest leg (lowest BLENDED pct); X2 ("what breaks first") breaks ties within 5 pts
+  const x2leg=({0:"sales",1:"ops",2:"cash"})[S.X2] || null;
+  const order=[["sales",salesB],["ops",opsB],["acc",accB],["cash",cashB]];
+  order.sort((a,c)=>{ const d=a[1]-c[1]; if(Math.abs(d)<=5 && x2leg){ if(a[0]===x2leg) return -1; if(c[0]===x2leg) return 1; } return d; });
+  r.shortest=order[0][0]; r.legOrder=order.map(o=>o[0]); r.x2=S.X2;
+  return r;
+}
+function estimateGM(){
+  const b=bench(); if(!b) return null;
+  // owners who don't track usually sit a touch below healthy low; cap baseline
+  const base = b.gm[0]-2;
+  // nudge from sensors (AC1,AC3,AC4 low => lower)
+  let adj=0; if(S.AC1!=null) adj += (S.AC1-1.5); if(S.AC4!=null) adj += (S.AC4-1.5)*.6;
+  let v = base + Math.max(-4,Math.min(4, adj));
+  return Math.round(v);
+}
+function estimateNet(){
+  const b=bench(); if(!b) return null;
+  const base = b.net[0]-2;
+  let adj=0; if(S.C4!=null) adj+=(S.C4-1.5)*.5; if(S.AC1!=null) adj+=(S.AC1-1.5)*.5;
+  return Math.round(base + Math.max(-4,Math.min(4,adj)));
+}
+function growthTier(g, rev){
+  if(g==null) return null;
+  if(g<0) return "DECLINING";
+  const m = rev? rev/1e6 : 6;
+  let slow,fast;
+  if(m<5){slow=.06; fast=.15;} else if(m<10){slow=.05; fast=.12;} else {slow=.04; fast=.10;}
+  if(g<slow) return "SLOW";
+  if(g>fast) return "FAST";
+  return "INLINE";
+}
+
+/* ====================================================================
+   RENDER REPORT
+   ==================================================================== */
+function renderReport(app){
+  const R = compute();
+  const w=el("div","wrap"); const st=el("div","stage rpt"); w.appendChild(st);
+
+  // brand line
+  const brand=el("div","brand");
+  brand.innerHTML=`<svg class="mk" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c2 5-1 6 0 9 3-1 4-4 4-4 3 4 4 7 4 10a8 8 0 1 1-16 0c0-4 3-7 4-9 1 2 2 2 2 2 0-3 0-6-2-8z" fill="var(--ember)"/></svg>
+    <div class="nm">YOUR <span>PROFIT &amp; FIRES</span> READ</div><div class="by">${tradeLabel()}</div>`;
+  st.appendChild(brand);
+
+  block1_archetype(st,R);
+  divider(st);
+  block2_glance(st,R);
+  block2b_growth(st,R);
+  divider(st);
+  block3_legs(st,R);
+  divider(st);
+  block4_cross(st,R);
+  block5_cost(st,R);
+  block6_you(st,R);
+  divider(st);
+  block7_move(st,R);
+  divider(st);
+  block8_cta(st,R);
+
+  // restart
+  const rs=el("div"); rs.style.marginTop="26px"; rs.style.textAlign="center";
+  const b=el("button","btn ghost","Run the scan again");
+  let armed=false;
+  b.onclick=()=>{
+    if(!armed){ armed=true; b.textContent="Tap again to clear your answers"; return; }
+    resetState(); go(0);
+  };
+  rs.appendChild(b); st.appendChild(rs);
+  st.appendChild(footer());
+  app.appendChild(w);
+}
+function divider(p){ p.appendChild(el("div","divider")); }
+function tradeLabel(){
+  if(S.A1 && BENCH[S.A1]) return BENCH[S.A1].label;
+  if(S.A1==="other") return "Your trade";
+  if(S.A1w.trim()) return S.A1w.trim();
+  return "Your business";
+}
+
+/* ---- BLOCK 1: score + archetype ---- */
+function block1_archetype(st,R){
+  const bodies = {
+    FIREFIGHTING:"You're the system. Sales, jobs, and money mostly run through you, and the week goes to whatever's burning loudest. Whatever profit shows up, shows up because you out-muscle the friction. That works until you run out of muscle. The good news: at this stage, a few structural moves change your life fast. Start below.",
+    LEAKING:"Real pieces are working, but the four legs aren't carrying the load evenly. Either the numbers are thinner than the work deserves, or they're holding only because you're holding them up. The leaks have names. They're below.",
+    HOLDING:"This is a good business. The numbers are real, the structure mostly exists, and the team carries weight. What's left is the gap between a company that holds and one that compounds: a handful of specific places where you're leaving points on the table. At your size, a few points is six figures.",
+    COMPOUNDING:"Rare air. The numbers are strong and the legs carry evenly, so the business builds on itself instead of leaning on you. The work now is protecting that as you grow. What's flagged below is sharpening, not surgery.",
+  };
+  const limiterLine = {
+    systems:"Here's the tell beneath the score: your numbers are strong, but they're riding on you more than on your systems. That's the opportunity below. Tighten the systems and the same numbers get easier to hold, and bigger to grow.",
+    numbers:"Here's the tell beneath the score: your systems are more built than your numbers are showing. The structure is there, but the money isn't following it yet. The leaks below are where it's going.",
+    balanced:"",
+  }[R.limiter] || "";
+  const card=el("div","archetype reveal");
+  // map the score into its archetype zone so the needle never sits in the wrong band
+  // (bands are 0-39/40-59/60-79/80-100 but the track draws four equal segments)
+  const zi = R.overall<50?0 : R.overall<60?1 : R.overall<80?2 : 3;
+  const zlo = [0,50,60,80][zi], zhi = [50,60,80,101][zi];
+  const needle = Math.max(2,Math.min(98,(zi + (R.overall-zlo)/(zhi-zlo))*25));
+  card.innerHTML=`
+    <span class="eyebrow">Your scan score</span>
+    <div class="scorewrap"><div class="scorebig">${R.overall}</div><div class="scoreof">/ 100</div></div>
+    <div class="arch-name">${R.arch}</div>
+    <div class="arch-body">${bodies[R.arch]}</div>
+    ${limiterLine?`<div class="arch-body" style="margin-top:12px; color:var(--steel)">${limiterLine}</div>`:""}
+    <div class="meter">
+      <div class="track"><i class="s1"></i><i class="s2"></i><i class="s3"></i><i class="s4"></i>
+        <div class="needle" style="left:calc(${needle}% - 1.5px)"></div></div>
+      <div class="labels"><span>Firefighting</span><span>Leaking</span><span>Holding</span><span>Compounding</span></div>
+    </div>`;
+  st.appendChild(card);
+}
+
+/* ---- BLOCK 2: at a glance ---- */
+function block2_glance(st,R){
+  const head=el("div","block reveal delay1");
+  head.innerHTML=`<span class="eyebrow steel">02 · At a glance</span><h2 style="margin-top:10px">Your business, by the numbers</h2>`;
+  st.appendChild(head);
+
+  if(R.nb){
+    const note=el("div","blindspot");
+    note.innerHTML=`Your trade doesn't have a published benchmark set in our engine yet, so we show your numbers straight and skip the comparisons rather than invent them.`;
+    st.appendChild(note);
+  }
+
+  const g=el("div","glance reveal delay1");
+  const rows=[];
+
+  // revenue per employee
+  if(R.rpp!=null && !R.nb){
+    const within = R.subHeavy ? true : (R.rpp/1000>=R.rppBand[0]);
+    rows.push(grow("Revenue per employee", money(R.rpp), `healthy $${R.rppBand[0]}-${R.rppBand[1]}K`, within?"":"warn"));
+    if(R.revNote) rows.push(caveat(R.revNote));
+  } else if(R.rpp!=null){
+    rows.push(grow("Revenue per employee", money(R.rpp), "your number", ""));
+  }
+
+  // gross margin
+  if(R.gmTyped || (!R.nb)){
+    const v = R.gm!=null? (R.gmTyped? R.gm+"%" : "~"+R.gm+"% · our estimate") : "—";
+    const flag = !R.gmTyped? "est" : ((!R.nb && R.gmBand)? (R.gm<R.gmBand[0]?"warn":(R.gm>=R.gmBand[0]?"ok":"")) : "");
+    const bm = (!R.nb && R.gmBand)? `healthy ${R.gmBand[0]}-${R.gmBand[1]}%` : "your number";
+    rows.push(grow("Gross margin", v, bm, flag));
+    if(!R.nb && R.gmCommercial) rows.push(caveat("Graded against commercial work for your trade. Mix moves this number more than management does."));
+  }
+
+  // net margin
+  if(R.netTyped || (!R.nb)){
+    const v = R.net!=null? (R.netTyped? R.net+"%" : "~"+R.net+"% · our estimate") : "—";
+    const flag = !R.netTyped? "est" : ((!R.nb && R.netBand)? (R.net<R.netBand[0]?"warn":"ok") : "");
+    const bm = (!R.nb && R.netBand)? `healthy ${R.netBand[0]}-${R.netBand[1]}%`+(R.netBest? ` · best-run clear ${R.netBest}%+`:"") : "your number";
+    rows.push(grow("Net margin", v, bm, flag));
+  }
+
+  // overhead load — suppressed when BOTH margins are estimates (it would measure our own assumptions)
+  if(R.gm!=null && R.net!=null && !R.nb && !R.bothBlind && R.overheadBand){
+    const gap = R.gm-R.net;
+    const est = !(R.gmTyped && R.netTyped);
+    const oh = R.overheadBand;
+    rows.push(grow("Overhead load", (est?"~":"")+gap+" pts"+(est?" · our estimate":""), `healthy ${oh[0]}-${oh[1]} pts`, est? "est" : (gap>oh[1]?"warn":"ok")));
+  }
+
+  // cash conversion (kept alive on "not sure" via estimate)
+  if(!R.nb && R.a8!=null){
+    const band=R.dsoBand;
+    const flag = R.a8Est? "est" : (R.a8>band[1]?"warn":(R.a8<=band[0]?"ok":""));
+    rows.push(grow("Cash conversion", (R.a8Est?"~":"")+R.a8+" days"+(R.a8Est?" · our estimate":""), `normal now ${band[0]}-${band[1]} · best under ${R.dsoTarget}`, flag));
+  } else if(!S.A8ns && S.A8!=null){
+    rows.push(grow("Cash conversion", S.A8+" days", "no payer benchmark", ""));
+  }
+
+  // revenue mix top source
+  const mix = mixRead();
+  if(mix){ rows.push(grow("Revenue mix", mix.tag, "from your split", mix.flag)); }
+
+  // growth
+  if(R.growth!=null){
+    const pct = Math.round(R.growth*100);
+    const tierLabel = {FAST:"fast for your size", INLINE:"in line for your size", SLOW:"slow for your size", DECLINING:"declining"}[R.growthTier];
+    rows.push(grow("Growth", (pct>=0?"+":"")+pct+"%/yr", tierLabel, R.growthTier==="DECLINING"?"warn":(R.growthTier==="FAST"?"ok":"")));
+  }
+
+  rows.forEach(rr=>g.appendChild(rr));
+  st.appendChild(g);
+
+  const note=el("div","glance-note reveal delay2");
+  note.textContent="These run on the numbers you gave us. Approximate in, approximate out, and that's fine. Where you tapped “not sure,” we estimated from how you answered, and flagged it, because you can't manage a number you can't see."
+    + (R.growth!=null ? " Growth is graded against size, not trade; those expectations are synthesized from general business data." : "");
+  st.appendChild(note);
+
+  // overhead callout / double-blind
+  if(!R.nb && R.gm!=null && R.net!=null){
+    if(R.bothBlind){
+      const bs=el("div","blindspot reveal delay2");
+      bs.innerHTML=`<b style="color:var(--steel)">Both your margin numbers are invisible.</b> You couldn't say your gross or net margin without looking. That's not a knock, but the two numbers that define what your fires cost are both invisible to you right now, and that's the first thing worth fixing.`;
+      st.appendChild(bs);
+    } else if(R.overheadBand){
+      const gap=R.gm-R.net; const oh=R.overheadBand; const extra=gap-oh[1];
+      const co=el("div","callout reveal delay2");
+      co.innerHTML=`<span class="h">Overhead load</span>The gap between your gross margin and your net margin is what it costs to run your company: overhead, rework, admin drag, chasing money. Well-run ${tradeLabel().toLowerCase()} shops your size hold that to about <b>${oh[0]}-${oh[1]} points</b> between the work and the bottom line. You're losing <b>${gap}</b>.${extra>0?` The extra <b>${extra} points</b> is your fires, measured.`:` That's inside the healthy zone, which is exactly where you want to be.`}`;
+      st.appendChild(co);
+    }
+  }
+
+  // owner-compensation clarity note (owner-facing, every trade) + trade-specific caveat
+  if(!R.nb){
+    const oc=el("div","callout steel reveal delay2");
+    oc.innerHTML=`<span class="h">One note on your net</span>This read takes the net margin you gave us at face value. If you pay yourself well above or below a market salary, your net reflects that. Adjust on your own for a cleaner comparison. The Audit does this precisely.`;
+    st.appendChild(oc);
+  }
+  if(!R.nb && R.tradeNote){
+    const tn=el("div","callout steel reveal delay3");
+    tn.innerHTML=`<span class="h">Worth knowing for your trade</span>${R.tradeNote}`;
+    st.appendChild(tn);
+  }
+
+  // single blind-spot findings ("not sure" is never a dead end)
+  const singles=[];
+  if(!R.bothBlind && !R.gmTyped && S.A5ns)
+    singles.push(`Your gross margin was a “not sure.”${R.gm!=null?` We estimated it at about ${R.gm}% from how you answered.`:""} It's the number that says whether the work itself makes money, and right now it's invisible to you.`);
+  if(!R.bothBlind && !R.netTyped && S.A6ns)
+    singles.push(`Your net margin was a “not sure.”${R.net!=null?` We estimated it at about ${R.net}% from how you answered.`:""} That's the number the fires eat first, and you can't manage a number you can't see.`);
+  if(S.A8ns)
+    singles.push(`You couldn't say how long job-to-cash takes.${R.a8!=null?` We estimated about ${R.a8} days from your billing structure.`:""} That number decides whether the job funds you or you fund the job.`);
+  singles.forEach(t=>{ const d=el("div","blindspot reveal delay2"); d.innerHTML=`<b style="color:var(--steel)">Blind spot.</b> ${t}`; st.appendChild(d); });
+
+  // mix narrative
+  if(mix && mix.copy){
+    const co=el("div","callout steel reveal delay3");
+    co.innerHTML=`<span class="h">Where your work comes from</span>${mix.copy}`;
+    st.appendChild(co);
+  }
+}
+function grow(label,val,bm,flag){
+  const r=el("div","grow"+(flag==="warn"?" flag":""));
+  r.innerHTML=`<div class="gl">${label}</div><div class="gv ${flag}">${val}</div><div class="gb">${bm}</div>`;
+  return r;
+}
+function caveat(t){ return el("div","caveat",t); }
+
+function mixRead(){
+  const keys=[["out","Business development"],["ref","Customer referrals"],["rep","Repeat / agreements"],["ins","Insurance / TPAs"],["gc","GC / commercial"],["ad","Online / ads"]];
+  let vals=keys.map(([k,lbl])=>[k,lbl,parseFloat(S.S1[k])||0]);
+  let total=vals.reduce((s,v)=>s+v[2],0)+(parseFloat(S.S1.other)||0);
+  if(total<80||total>120){ // wildly off → ordinal only, skip % copy
+    vals.sort((a,c)=>c[2]-a[2]);
+    if(vals[0][2]<=0) return null;
+    return {tag:vals[0][1], flag:"", copy:null};
+  }
+  // normalize
+  vals = vals.map(v=>[v[0],v[1], Math.round(v[2]/total*100)]);
+  vals.sort((a,c)=>c[2]-a[2]);
+  const top=vals[0];
+  const refRep=(vals.find(v=>v[0]==="ref")?.[2]||0)+(vals.find(v=>v[0]==="rep")?.[2]||0);
+  const ad=vals.find(v=>v[0]==="ad")?.[2]||0;
+  const ins=vals.find(v=>v[0]==="ins")?.[2]||0;
+  let copy=null, flag="";
+  if(top[2]>=60){ flag="warn"; copy=`<b>${top[2]}%</b> of your work walks through one door: ${top[1].toLowerCase()}. When one door feeds you, the business is stable right up until the day it isn't. That's not a sales strategy. That's weather.`; }
+  else if(refRep>=70){ copy=`Your base is sticky: referrals and repeat work carry you. That's earned, and it's real. It's also capped. You can't turn up word of mouth on demand.`; }
+  else if(ad>=50){ copy=`Most of your growth is bought. That scales, but every job carries an acquisition cost, and the faucet closes the day you stop paying.`; }
+  else if(ins>=50){ flag="warn"; copy=`Half your revenue answers to a payer you don't control. Program terms move, and your margin moves with them.`; }
+  else if(top[2]<40){ copy=`Your work comes through several doors. That's the most stable shape there is. The question is whether you can open any of them wider on demand.`; }
+  const tag = top[2]>=40? `${top[2]}% ${top[1].toLowerCase()}` : "balanced";
+  return {tag, flag, copy};
+}
+
+/* ---- BLOCK 2b: growth x cash ---- */
+function block2b_growth(st,R){
+  if(R.growth==null) return; // A7 not sure → skip, no penalty
+  const tier=R.growthTier;
+  let key;
+  if(tier==="DECLINING"){
+    let copy=`Revenue has gone backward since three years ago. That's not slow growth. It's a different problem, and the legs below say where it started. The good news inside the bad: a shrinking business that fixes its leaks recovers faster than a growing one, because nothing new is competing for the cash.`;
+    if(R.cashPosture==="TIGHT") copy+=` And with cash already tight, this stopped being a someday conversation.`;
+    pushQuad(st,"The turbulence read", copy); return;
+  }
+  const fast = (tier==="FAST");
+  const inline = (tier==="INLINE");
+  const slow = (tier==="SLOW");
+  const tight = R.cashPosture==="TIGHT";
+  const strong = R.cashPosture==="STRONG";
+  let copy="";
+  if(inline && tight){
+    // in-line growers are NOT flat — the flat-and-tight warning would misdiagnose them
+    pushQuad(st,"The turbulence read", `You're growing in line for your size and cash still feels tight. That's the tell: the squeeze isn't growth eating the cash, it's structure leaking it. Billing late, chasing slow, margin thinner than it should be. The fires below are where.`);
+    return;
+  }
+  if(fast && tight) copy=`Your cash is tight because your growth is eating it. That's physics, not failure. Every month of growth means payroll and materials today against invoices that pay in ${dsoMid()} days. But it has to be funded on purpose: deposits, progress billing, a credit line you don't apologize for. Growth that runs on accidental cash ends abruptly.`;
+  else if(fast && strong) copy=`You're growing fast and holding cash. That's rare, and it usually means your billing structure is doing its job. Protect it as you scale. The companies that stall are the ones that let growth outrun the cash engine that funds it.`;
+  else if(slow && tight) copy=`This is the combination to take seriously. A slow-growing business should be building cash. Nothing new is eating it. If you're flat and tight, the money isn't being consumed by growth. It's leaking. The fires below are where.`;
+  else if((slow||inline) && strong) copy=`Stable and liquid. The business throws off cash and nothing is eating it. The question stops being survival and starts being direction: what is that cash supposed to be building?`;
+  else { // OK posture — soften toward nearest
+    copy = fast
+      ? `You're growing at a real clip. Cash is holding for now. The thing to watch: growth eats cash, so the billing structure that funds it has to stay ahead of the work, not behind it.`
+      : `Growth is steady and cash is manageable. Nothing here is on fire, which means the question shifts from survival to direction: what should this business be building next.`;
+  }
+  pushQuad(st,"The turbulence read", copy);
+}
+function pushQuad(st,h,copy){
+  const co=el("div","callout reveal delay3");
+  co.innerHTML=`<span class="h">${h}</span>${copy}`;
+  st.appendChild(co);
+}
+function dsoMid(){ const b=dsoBand(); return Math.round((b[0]+b[1])/2); }
+
+/* ---- BLOCK 3: four legs ---- */
+function block3_legs(st,R){
+  const head=el("div","block reveal");
+  head.innerHTML=`<span class="eyebrow">03 · The four legs</span><h2 style="margin-top:10px">Verdict by leg</h2>`;
+  st.appendChild(head);
+
+  st.appendChild(chassisReport(R));
+
+  const defs=[
+    ["sales","Sales",salesVerdict(R)],
+    ["ops","Operations",opsVerdict(R)],
+    ["acc","Accounting",accVerdict(R)],
+    ["cash","Cash",cashVerdict(R)],
+  ];
+  defs.forEach(([k,nm,vtext])=>{
+    const leg=R.legs[k];
+    const card=el("div","legcard reveal");
+    card.innerHTML=`<div class="badge ${leg.v}">${leg.v}</div>
+      <div class="lc"><div class="nm">${nm} <span class="sc">${leg.raw}/${leg.max}</span></div>
+      <div class="vb">${vtext}</div></div>`;
+    st.appendChild(card);
+    if(k==="ops" && R.emergency && lv("O5")<=1){
+      const n=el("div","small reveal","Booked-out reads differently in restoration. You're an emergency-response business, open capacity is the model, and a thin backlog didn't count against your score.");
+      n.style.margin="-6px 0 12px 4px"; n.style.color="var(--text-faint)";
+      st.appendChild(n);
+    }
+  });
+
+  // shortest leg line + ranked list
+  const map={sales:"sales",ops:"operations",acc:"accounting",cash:"collections"};
+  const nicemap={sales:"Sales",ops:"Operations",acc:"Accounting",cash:"Cash"};
+  const ranked = R.legOrder.map(k=>nicemap[k]).join(" → ");
+  const sl=el("div","shortest reveal");
+  sl.innerHTML=`<b>Your shortest leg: ${nicemap[R.shortest]}.</b> That's where the wobble starts. Based on your answers, here's the order to work the legs, shortest first:
+    <div class="ranklist">${ranked}</div>`;
+  st.appendChild(sl);
+}
+function chassisReport(R){
+  const wrap=el("div","legs-vis reveal");
+  const map=[["sales",R.legs.sales],["ops",R.legs.ops],["acc",R.legs.acc],["cash",R.legs.cash]];
+  const col={weak:"var(--weak)",mid:"var(--mid)",strong:"var(--strong)"};
+  const legs=map.map(([k,l])=>({h: 28+Math.round(l.pct/100*42), color:col[l.v]}));
+  // tilt toward shortest (index)
+  const idx=["sales","ops","acc","cash"].indexOf(R.shortest);
+  const tilt = (idx<2? -1.6:1.6);
+  const c=el("div"); c.style.display="flex"; c.style.justifyContent="center";
+  c.innerHTML=chassisSVG({legs, tilt});
+  wrap.appendChild(c);
+  return wrap;
+}
+function salesVerdict(R){
+  const l=R.legs.sales;
+  if(l.v==="strong") return "Work shows up and you can turn the dial. This leg carries.";
+  if(l.v==="weak") return "This is the leg to worry about first. You can't fix margin on revenue you can't predict.";
+  const mix=mixRead();
+  let ins;
+  if(mix && mix.flag==="warn" && /one door|\d+%/.test(mix.tag) && topShareGTE60()) ins="most of it walks through one door";
+  else if(lv("S3")<=1) ins="nobody's keeping score on what you win and lose";
+  else if(lv("S4")<=1) ins="open bids leak away unchased";
+  else ins="the machine still leans on you more than it should";
+  return `Work comes in, but ${ins}.`;
+}
+function topShareGTE60(){
+  const keys=["ref","rep","ins","gc","ad","out"]; let total=keys.reduce((s,k)=>s+(parseFloat(S.S1[k])||0),0)+(parseFloat(S.S1.other)||0);
+  if(total<=0) return false; const top=Math.max(...keys.map(k=>parseFloat(S.S1[k])||0)); return top/total>=.6;
+}
+function opsVerdict(R){
+  const l=R.legs.ops;
+  if(l.v==="strong") return "The work runs without you in every job. Rare.";
+  if(l.v==="weak") return "Every sold job passes through a bottleneck with your name on it. Growth makes this worse, not better.";
+  let ins;
+  if(lv("O4")<=1) ins="you're still the glue";
+  else if(lv("O3")<=1) ins="rework has no pattern anyone watches";
+  else if(!R.emergency && lv("O5")<=1) ins="you can only see two weeks out";
+  else ins="the system still needs your hands on the wheel";
+  return `Jobs get done, but ${ins}.`;
+}
+function accVerdict(R){
+  const l=R.legs.acc;
+  if(l.v==="strong") return "You see margin by job and act on it. This is what control looks like.";
+  if(l.v==="weak") return `You're running a ${R.dollarsOff?"multi-million-dollar":money(R.rev)} company by bank balance. That's not a knock. It's the single biggest opportunity on this page.`;
+  return "The books exist, but they tell you what happened, not what's happening. By the time you see a bad job, it's already paid for.";
+}
+function cashVerdict(R){
+  const l=R.legs.cash;
+  if(l.v==="strong") return "Money lands close to when it's earned. The job funds itself.";
+  if(l.v==="weak") return "Your working capital is funding everyone but you: the carrier, the GC, the customer. Cash is the leg that breaks companies that look profitable.";
+  // mid
+  if(!R.nb && R.a8!=null){
+    const mid=dsoMid();
+    if(R.a8>mid){ const wks=Math.max(1,Math.round((R.a8-mid)/7));
+      return `Profit shows up on paper about ${wks} week${wks>1?"s":""} before it shows up in the bank. That gap is financed by you.`; }
+    return "Money moves on time when it moves. What's left here is structure, not speed.";
+  }
+  return "Money mostly moves, but the structure around billing and collections still leaves cash on someone else's calendar.";
+}
+
+/* ---- BLOCK 4: how leaks feed each other (pick ONE) ---- */
+function block4_cross(st,R){
+  const cands=[];
+  const gmBelow = (!R.nb && R.gmBand && R.gm!=null && R.gm<R.gmBand[0]);
+  const a8Slow = (!S.A8ns && S.A8!=null && !R.nb && S.A8>R.dsoBand[1]);
+  const growFast = R.growthTier==="FAST";
+
+  if(S.AC2.includes(1) && S.X1.includes(2)) cands.push(["acc","Your estimating bottleneck IS your margin leak. Jobs run over because pricing and planning still route through one person: you."]);
+  if(lv("O3")<=1 && a8Slow) cands.push(["cash","Your callbacks are slowing your cash. Rework drags out close-out, and you can't collect on work that isn't finished."]);
+  if(lv("AC1")<=1 && growFast) cands.push(["acc","You're growing on jobs you can't see the margin on. Every new crew multiplies a number you're not tracking."]);
+  if(S.X2===0 && lv("O5")<=1 && !R.emergency) cands.push(["sales","Sales stops when you stop, and you can only see two weeks out. That's not a pipeline. That's a treadmill."]);
+  if(lv("C2")<=1 && a8Slow) cands.push(["cash","You're funding the job before the job funds you. Deposits and progress billing exist so the customer's money builds the work, not yours."]);
+  if(lv("AC3")<=1 && gmBelow) cands.push(["acc","The work you do free is the margin you're missing. Scope grows, the bill doesn't."]);
+  if(topShareGTE60() && lv("S2")<=1) cands.push(["sales","Most of your work walks in one door, and you can't open it wider on demand. That's not a sales strategy. That's weather."]);
+
+  if(!cands.length) return;
+  // tie-break: prefer pattern involving shortest leg, then declining/tight cash promotes cash, then order
+  let pick=cands[0];
+  const promoteCash = (R.growthTier==="SLOW"||R.growthTier==="DECLINING") && R.cashPosture==="TIGHT";
+  const shortFirst = cands.find(c=>c[0]===R.shortest);
+  if(promoteCash){ const cash=cands.find(c=>c[0]==="cash"); if(cash) pick=cash; else if(shortFirst) pick=shortFirst; }
+  else if(shortFirst) pick=shortFirst;
+
+  const head=el("div","block reveal");
+  head.innerHTML=`<span class="eyebrow">04 · How the leaks feed each other</span>`;
+  st.appendChild(head);
+  const leak=el("div","leak reveal"+(pick[0]==="cash"?" cash":""));
+  leak.innerHTML=pick[1];
+  st.appendChild(leak);
+
+  // named leaks library (AC2 + C1) + fires (X3) + words (X4)
+  const ac2lines={
+    0:"Your bids are writing checks the jobs can't cash. The estimate is where the margin died.",
+    1:"Labor overruns. The hours eat the margin, and nobody sees it until payroll clears.",
+    2:"Material creep. Prices moved, your numbers didn't, and the difference came out of your pocket.",
+    3:"Change orders you never billed. Free work is the most expensive thing you sell.",
+    4:"The callback tax. Jobs aren't done when they're done, and the comeback hours are pure margin.",
+    5:"Bought revenue. The discount that won the job was the profit it was supposed to make.",
+    6:"The leak with no name yet. You find out too late to say, and that is itself the finding.",
+  };
+  const c1lines={
+    0:"The money's earned. The bill just hasn't left the building. That's a free loan you're giving.",
+    1:"Your payer pays slow, and your process doesn't push back.",
+    2:"Approvals and disputes are the toll booth between you and your money.",
+    3:"Retention: your money, parked in someone else's account, on their calendar.",
+    4:"Invoices age because stopping it is nobody's job.",
+    5:null,
+  };
+  if(S.AC2.length){
+    const h=el("div","block reveal"); h.style.marginTop="22px";
+    h.innerHTML=`<h3 style="font-size:14px; color:var(--ember); letter-spacing:.06em; text-transform:uppercase">Your margin leaks, named</h3>`;
+    st.appendChild(h);
+    S.AC2.forEach(i=>{ if(ac2lines[i]){ const x=el("div","leak reveal"); x.innerHTML=ac2lines[i]; st.appendChild(x); } });
+  }
+  const c1real=S.C1.filter(i=>i!==5);
+  if(c1real.length){
+    const h=el("div","block reveal"); h.style.marginTop="22px";
+    h.innerHTML=`<h3 style="font-size:14px; color:var(--steel); letter-spacing:.06em; text-transform:uppercase">Your cash leaks, named</h3>`;
+    st.appendChild(h);
+    c1real.forEach(i=>{ if(c1lines[i]){ const x=el("div","leak cash reveal"); x.innerHTML=c1lines[i]; st.appendChild(x); } });
+  }
+  // fires by name (X3)
+  if(S.X3.length){
+    const h=el("div","block reveal"); h.style.marginTop="22px";
+    h.innerHTML=`<h3 style="font-size:14px; letter-spacing:.06em; text-transform:uppercase; color:#D7D1C6">Your fires, by name</h3>`;
+    st.appendChild(h);
+    const fw=el("div","reveal"); fw.style.marginTop="6px";
+    S.X3.forEach(i=>{ fw.appendChild(el("span","firename",FIRE_LABELS[i])); });
+    st.appendChild(fw);
+  }
+  // in your words: X4 plus every write-in, printed back verbatim (spec: never swallowed silently)
+  const words=[]; if(S.X4.trim()) words.push(S.X4.trim());
+  writeIns().forEach(t=>{ if(!words.includes(t)) words.push(t); });
+  if(words.length){
+    const iw=el("div","callout reveal"); iw.style.marginTop="16px";
+    iw.innerHTML=`<span class="h">In your words</span>`+words.map(t=>`“${esc(t)}”`).join("<br>");
+    st.appendChild(iw);
+  }
+}
+
+/* ---- BLOCK 5: what it's costing you ---- */
+function block5_cost(st,R){
+  const head=el("div","block reveal"); head.style.marginTop="30px";
+  head.innerHTML=`<span class="eyebrow">05 · What it's costing you</span>`;
+  st.appendChild(head);
+
+  if(R.dollarsOff){
+    const bs=el("div","blindspot reveal");
+    bs.innerHTML=`We can't size this in dollars without your revenue, and that's a finding on its own. Sizing it exactly is what the Audit does. Everything else on this page, your scores, your leaks, your one move, still stands.`;
+    st.appendChild(bs); return;
+  }
+
+  // healthy-owner variant
+  if(!R.nb && R.netBand && R.net!=null && R.net>=R.netBand[0]){
+    const co=el("div","cost reveal");
+    co.innerHTML=`<div class="prize">Your margins are at or above healthy for your trade. The opportunity on this page isn't recovery. It's direction: a business this sound throws off cash, and the question becomes what that cash is building, capacity, acquisition, or a company that runs without you.</div>`;
+    st.appendChild(co); return;
+  }
+
+  const cost=el("div","cost reveal");
+  let inner="";
+  let prizeNum=0;
+
+  if(!R.nb && R.netBand && R.net!=null){
+    const gapLow = Math.max(0, R.netBand[0]-R.net);          // conservative: to low end of healthy
+    const gapMid = Math.max(0, (R.netBand[0]+R.netBand[1])/2 - R.net);
+    const profitLow = gapLow/100*R.rev;
+    const profitMid = gapMid/100*R.rev;
+    prizeNum=profitLow;
+    if(profitLow>0){
+      inner+=`<div class="row"><div class="k">Profit left on the table</div><div class="v">${money(profitLow)}–${money(profitMid)}<span style="font-size:12px; color:var(--text-dim)">/yr</span></div></div>`;
+    }
+  }
+  // cash stuck
+  if(!R.nb && !S.A8ns && S.A8!=null){
+    const mid=dsoMid();
+    const excess=S.A8-mid;
+    if(excess>0){ const stuck=excess/365*R.rev;
+      inner+=`<div class="row"><div class="k">Cash stuck in the pipeline</div><div class="v">${money(stuck)}</div></div>`; }
+  }
+  if(!inner){
+    cost.innerHTML=`<div class="prize">Your numbers are inside healthy range where we can size them. The leaks above are about structure and time more than a dollar gap, and those compound quietly. The Audit puts a real number on them.</div>`;
+    st.appendChild(cost); return;
+  }
+  cost.innerHTML=inner;
+  // compounding line
+  if(R.growth!=null && R.growth>0){
+    const cl=el("div","prize"); cl.style.marginTop="14px"; cl.style.color="var(--text-dim)";
+    cl.textContent="At your growth rate this doesn't hold steady. The same leaks on next year's revenue are a bigger number.";
+    cost.appendChild(cl);
+  }
+  if(prizeNum>0){
+    const pz=el("div","prize");
+    pz.innerHTML=`Close the gap to healthy and that's roughly <b>${money(prizeNum)} a year</b> that stays in the business, and a company that doesn't need you standing in every fire to earn it.`;
+    cost.appendChild(pz);
+  }
+  st.appendChild(cost);
+}
+
+/* ---- BLOCK 6: what it's costing *you* ---- */
+function block6_you(st,R){
+  if(R.depScore<3) return;
+  // lead with X2 + X1 picks
+  const x1names={0:"driving leads",1:"selling",2:"estimating",3:"scheduling",4:"final quality",5:"chasing money",6:"hiring"};
+  let picks = S.X1.filter(i=>i!==7).map(i=>x1names[i]).filter(Boolean);
+  if(!picks.length) picks=["the decisions"];
+  const lead = picks.slice(0,3).join(", ");
+  // lead with the X2 answer where available (spec, Block 6)
+  const x2lead = ({0:"new sales stop",1:"jobs stall",2:"the money stops moving"})[S.X2] || null;
+  const co=el("div","callout reveal"); co.style.marginTop="22px";
+  co.innerHTML=`<span class="h">And what it's costing you</span>One more number that isn't on any P&L.${x2lead?` Go dark for two weeks and ${x2lead}. Your answer, not ours.`:""} By your own answers, ${lead} still ${picks.length>1?"don't":"doesn't"} happen without you. That's the phone on vacation. Right now you don't fully own a business. You own a job with payroll. The fixes above aren't just worth dollars. They're how the business stops owning you back.`;
+  st.appendChild(co);
+}
+
+/* ---- BLOCK 7: your one move ---- */
+function block7_move(st,R){
+  const head=el("div","block reveal");
+  head.innerHTML=`<span class="eyebrow">06 · Your one move</span><h2 style="margin-top:10px">If you do exactly one thing this month, do this.</h2>`;
+  st.appendChild(head);
+
+  const move = oneMove(R);
+  const card=el("div","onemove reveal");
+  card.innerHTML=`<span class="h">Start here · ${leName(R.shortest)} leg</span><div class="mv">${move}</div>`;
+  st.appendChild(card);
+}
+function leName(k){ return {sales:"Sales",ops:"Operations",acc:"Accounting",cash:"Cash"}[k]; }
+function oneMove(R){
+  const leg=R.shortest;
+  const lib={
+    sales:{
+      one_door:"Pick the second door and open it on purpose: one new channel, 90 days, measured. Stability is built, not wished for.",
+      S2:"Pick one channel you can turn up on purpose and put a number on it: this many calls, this many visits, this much spend. The goal isn't more work this month. It's proof you can create work on demand.",
+      S3:"Start counting wins and losses this week. A whiteboard works. You can't raise a number you can't see.",
+      S4:"Put every open bid on a set follow-up schedule: day 2, day 7, day 14. The cheapest revenue you'll ever add is the bids you already wrote.",
+      S5:"Rebuild your price off one real job's actual costs this week. A markup set years ago isn't pricing anymore. It's habit.",
+    },
+    ops:{
+      O1:"Get every job out of your head and onto one board the whole team can see. Software later. Visibility first.",
+      O2:"Give your most critical team one weekly meeting with three numbers on a board. Same day, same time, every week. Structure starts as a calendar invite.",
+      O3:"Log every callback for 30 days: job, crew, cause. Patterns pay for themselves.",
+      O4:"Pick the decision type that hits your phone most and hand it to a lead with one rule: under a set dollar amount, you decide and tell me later.",
+      O5:"Build a two-column backlog: booked and likely. Update it every Friday. You can't steer a truck by staring at the hood.",
+    },
+    acc:{
+      AC1:"Get job-level profit visible, even rough. One spreadsheet, every closed job, estimated versus actual.",
+      AC2:"Run estimated-versus-actual on your next five jobs. The gap is exactly where the bidding is off.",
+      AC3:"Price and paper every change before the work happens, starting Monday. Free work is the most expensive thing you sell.",
+      AC4:"Pull your three biggest material costs and check them against today's prices. If costs moved and your prices didn't, that gap compounds on every job you sell.",
+      AC5:"Get the books closing monthly, even rough. A business your size flying on tax-time numbers is flying on last year's weather report.",
+    },
+    cash:{
+      C1_invoice:"Bill the day the work is done. Not Friday. The day.",
+      C2:"Make deposits and progress billing standard on every job over a set size.",
+      C3:"Give collections an owner and a weekly rhythm. Invoices age because stopping it is nobody's job.",
+      C4:"Open a separate account and move a fixed slice of every deposit into it automatically. A reserve isn't saved. It's siphoned.",
+    }
+  };
+  if(leg==="sales"){
+    if(topShareGTE60()) return lib.sales.one_door;
+    const arr=[["S2",lv("S2")],["S3",lv("S3")],["S4",lv("S4")],["S5",lv("S5")]].sort((a,b)=>a[1]-b[1]);
+    return lib.sales[arr[0][0]] || lib.sales.S2;
+  }
+  if(leg==="ops"){
+    const arr=[["O1",lv("O1")],["O2",lv("O2")],["O3",lv("O3")],["O4",lv("O4")]];
+    if(!R.emergency) arr.push(["O5",lv("O5")]); // backlog move never prescribed to an emergency-response trade
+    arr.sort((a,b)=>a[1]-b[1]);
+    return lib.ops[arr[0][0]] || lib.ops.O4;
+  }
+  if(leg==="acc"){
+    if(S.AC2.includes(0)) return lib.acc.AC2; // estimate-missed loudest
+    const arr=[["AC1",lv("AC1")],["AC3",lv("AC3")],["AC4",lv("AC4")],["AC5",lv("AC5")]].sort((a,b)=>a[1]-b[1]);
+    return lib.acc[arr[0][0]] || lib.acc.AC1;
+  }
+  // cash
+  if(S.C1.includes(0)) return lib.cash.C1_invoice;
+  if(S.C1.includes(4)) return lib.cash.C3;
+  const arr=[["C2",lv("C2")],["C3",lv("C3")],["C4",lv("C4")]].sort((a,b)=>a[1]-b[1]);
+  const mapc={C2:lib.cash.C2,C3:lib.cash.C3,C4:lib.cash.C4};
+  return mapc[arr[0][0]] || lib.cash.C3;
+}
+
+/* ---- BLOCK 8: boundary + CTA + Adam's note ---- */
+function payerLabel(){ const p=PAYERS.find(x=>x[0]===S.A2); return p? p[1] : ((S.A2w||"").trim()||"—"); }
+function reportText(R){
+  const L=[];
+  L.push(`Score: ${R.overall}/100 (${R.arch})`);
+  L.push(`Trade: ${tradeLabel()} | Payer: ${payerLabel()}`);
+  L.push(`Revenue: ${S.A3!=null?"$"+S.A3+"M":"not sure"} | People: ${S.A4!=null?S.A4:"not sure"} | GM: ${R.gm!=null?R.gm+"%":"n/a"}${R.gmTyped?"":" (est)"} | Net: ${R.net!=null?R.net+"%":"n/a"}${R.netTyped?"":" (est)"}`);
+  if(S.A7!=null) L.push(`Revenue 3 yrs ago: $${S.A7}M${R.growth!=null?` | Growth ~${Math.round(R.growth*100)}%/yr (${R.growthTier})`:""}`);
+  if(R.a8!=null) L.push(`Job-to-cash: ${R.a8} days${R.a8Est?" (est)":""}`);
+  L.push("Legs, shortest first: " + R.legOrder.map(k=>`${leName(k)} ${Math.round(R.legs[k].pct)}% (${R.legs[k].v})`).join(" | "));
+  L.push("One move: " + oneMove(R));
+  if(S.X3.length) L.push("Fires: " + S.X3.map(i=>FIRE_LABELS[i]).join(" / "));
+  if(S.X4.trim()) L.push("First fire to put out: " + S.X4.trim());
+  const wi=writeIns(); if(wi.length) L.push("In their words: " + wi.map(t=>`"${t}"`).join(" | "));
+  return L.join("\n");
+}
+/* Booking link with the scan riding along: Calendly prefills its first
+   custom question from ?a1= — the report lands inside the booking itself. */
+function bookHrefFor(R){
+  const p = new URLSearchParams();
+  p.set("utm_source","pfscan");
+  p.set("a1", "— Profit & Fires Scan —\n" + reportText(R));
+  return CFG.bookUrl + (CFG.bookUrl.includes("?") ? "&" : "?") + p.toString();
+}
+function loadScript(src){
+  return new Promise((res,rej)=>{ const s=document.createElement("script");
+    s.src=src; s.onload=res; s.onerror=()=>rej(new Error("script load failed")); document.head.appendChild(s); });
+}
+/* The full on-page report serialized as styled email HTML: walk the rendered
+   results block by block (minus the sales close, chrome, and charts) and map
+   each known structure to email-safe inline-styled markup. Emails render on
+   white, so colors here are email colors, not page colors. */
+function emailReportHtml(){
+  const src = document.querySelector(".stage.rpt");
+  if(!src) return "";
+  const c = src.cloneNode(true);
+  c.querySelectorAll(".ctablock,.gateform,.gatedone,.adamnote,.disclaimer,button,.footer,svg,.brand,.legs-vis,.meter,.divider").forEach(n=>n.remove());
+  const t = n => n ? n.textContent.replace(/\s+/g," ").trim() : "";
+  const P = "margin:6px 0; font-size:14px; line-height:1.55; color:#222";
+  const GRAY = "color:#7a7a7a";
+  const HD = "margin:16px 0 4px; font-size:12.5px; font-weight:700; letter-spacing:.5px; text-transform:uppercase; color:#444";
+  const out = [];
+  const line = h => out.push(h);
+  Array.from(c.children).forEach(n=>{
+    const cl = n.classList;
+    if(cl.contains("archetype")){
+      line(`<div style="margin:4px 0 0; font-size:11px; letter-spacing:1px; text-transform:uppercase; ${GRAY}">Scan score</div>`);
+      line(`<div style="font-size:24px; font-weight:800; color:#111">${t(n.querySelector(".scorebig"))}/100 · ${t(n.querySelector(".arch-name"))}</div>`);
+      n.querySelectorAll(".arch-body").forEach(b=>line(`<p style="${P}">${t(b)}</p>`));
+    } else if(cl.contains("block")){
+      const eb=t(n.querySelector(".eyebrow")), h2=t(n.querySelector("h2")), h3=t(n.querySelector("h3"));
+      if(eb) line(`<div style="margin:22px 0 0; font-size:11px; letter-spacing:1px; text-transform:uppercase; ${GRAY}">${eb}</div>`);
+      if(h2) line(`<div style="margin:2px 0 8px; font-size:17px; font-weight:700; color:#111">${h2}</div>`);
+      if(h3) line(`<div style="${HD}">${h3}</div>`);
+      n.querySelectorAll("p").forEach(p=>line(`<p style="${P}">${t(p)}</p>`));
+    } else if(cl.contains("glance")){
+      n.querySelectorAll(".grow").forEach(r=>{
+        line(`<div style="${P}"><b>${t(r.querySelector(".gl"))}:</b> ${t(r.querySelector(".gv"))} <span style="${GRAY}">· ${t(r.querySelector(".gb"))}</span></div>`);
+      });
+      n.querySelectorAll(".caveat").forEach(cv=>line(`<div style="margin:2px 0 6px; font-size:12.5px; ${GRAY}">${t(cv)}</div>`));
+    } else if(cl.contains("legcard")){
+      const nm=n.querySelector(".lc .nm").cloneNode(true);
+      const sc=nm.querySelector(".sc"); const scT=t(sc); if(sc) sc.remove();
+      line(`<div style="margin:12px 0 0; font-size:14px; color:#111"><b>${t(nm)}</b> — ${t(n.querySelector(".badge")).toUpperCase()} <span style="${GRAY}">(${scT})</span></div>`);
+      line(`<div style="${P}; margin-top:2px">${t(n.querySelector(".vb"))}</div>`);
+    } else if(cl.contains("shortest")){
+      const cn=n.cloneNode(true); const rk=cn.querySelector(".ranklist"); const rkT=t(rk); if(rk) rk.remove();
+      line(`<div style="${P}; border-left:3px solid #EE7B3C; padding-left:10px; margin:12px 0"><b>${t(cn)}</b><br>${rkT}</div>`);
+    } else if(cl.contains("leak")){
+      line(`<div style="${P}">• ${t(n)}</div>`);
+    } else if(cl.contains("callout")){
+      const cn=n.cloneNode(true); const h=cn.querySelector(".h"); const ht=t(h); if(h) h.remove();
+      if(ht) line(`<div style="${HD}">${ht}</div>`);
+      line(`<div style="${P}">${cn.innerHTML.trim()}</div>`);
+    } else if(cl.contains("cost")){
+      Array.from(n.children).forEach(ch=>{
+        if(ch.classList.contains("row")) line(`<div style="${P}"><b>${t(ch.querySelector(".k"))}:</b> ${t(ch.querySelector(".v"))}</div>`);
+        else if(ch.classList.contains("prize")) line(`<p style="${P}"><b>${t(ch)}</b></p>`);
+        else { const tx=t(ch); if(tx) line(`<p style="${P}">${tx}</p>`); }
+      });
+    } else if(cl.contains("onemove")){
+      line(`<div style="margin:10px 0; padding:10px 12px; border-left:3px solid #EE7B3C; background:#faf5ef"><div style="font-size:11px; letter-spacing:1px; text-transform:uppercase; ${GRAY}">${t(n.querySelector(".h"))}</div><div style="font-size:15px; font-weight:700; margin-top:4px; color:#111">${t(n.querySelector(".mv"))}</div></div>`);
+    } else if(cl.contains("blindspot")||cl.contains("small")||cl.contains("caveat")){
+      line(`<div style="margin:8px 0; font-size:12.5px; ${GRAY}">${t(n)}</div>`);
+    } else {
+      const fires=n.querySelectorAll(".firename");
+      if(fires.length){ fires.forEach(f=>line(`<div style="${P}">• ${t(f)}</div>`)); }
+      else { const tx=t(n); if(tx) line(`<p style="${P}">${tx}</p>`); }
+    }
+  });
+  return out.join("");
+}
+async function sendLead(R, who){
+  if(!CFG.webhookUrl) return;
+  const parts = who.name.trim().split(/\s+/);
+  const body = {
+    first_name: parts[0]||"", last_name: parts.slice(1).join(" "),
+    email: who.email.trim(), source: "profit-fires-scan",
+    score: R.overall, archetype: R.arch, trade: tradeLabel(), payer: payerLabel(),
+    revenue_m: S.A3, headcount: S.A4, gm_pct: R.gm, net_pct: R.net,
+    shortest_leg: leName(R.shortest), one_move: oneMove(R),
+    /* the notification email renders HTML — compact summary on top,
+       the visitor's full on-page report styled underneath */
+    report: reportText(R).replace(/\n/g, "<br>")
+      + '<br><br><div style="font-size:16px; font-weight:800; letter-spacing:.5px; color:#111; border-top:2px solid #ddd; padding-top:14px">THE FULL REPORT, AS THEY SAW IT</div>'
+      + emailReportHtml(),
+  };
+  const ph = who.phone.trim(); if(ph) body.phone = ph; /* GHL 422s on empty strings — omit blank keys */
+  try{
+    await fetch(CFG.webhookUrl,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body),keepalive:true});
+  }catch(e){ console.warn("lead webhook failed", e); }
+}
+async function makePdf(R, personName){
+  const src = document.querySelector(".stage.rpt");
+  const clone = src.cloneNode(true);
+  clone.querySelectorAll(".ctablock,.gateform,.gatedone,.blockcta,button,.footer").forEach(n=>n.remove());
+  /* the renderer doesn't run CSS animations — .reveal's opacity:0 base state
+     would photograph every block invisible; force the settled state */
+  clone.querySelectorAll(".reveal").forEach(n=>{ n.classList.remove("reveal"); n.style.opacity="1"; n.style.transform="none"; });
+  /* SVG presentation attributes can't resolve var(--…) inside the renderer — inline the literals */
+  clone.querySelectorAll("[fill^='var('],[stroke^='var(']").forEach(n=>{
+    const css=getComputedStyle(document.documentElement);
+    for(const at of ["fill","stroke"]){
+      const v=n.getAttribute(at);
+      if(v && v.startsWith("var(")) n.setAttribute(at, css.getPropertyValue(v.slice(4,-1)).trim() || "#EE7B3C");
+    }
+  });
+  /* detached on purpose: html2pdf clones whatever it's given, inline styles and
+     all, into its own capture container — any offscreen positioning here would
+     ride along and photograph as a blank page */
+  const shell = el("div");
+  shell.style.cssText="width:820px; background:#15161A; padding:34px 40px; box-sizing:border-box";
+  const head = el("div");
+  head.style.cssText="display:flex; justify-content:space-between; align-items:baseline; border-bottom:1px solid #34373F; padding-bottom:14px; margin-bottom:22px";
+  head.innerHTML=`<div style="font-family:var(--display); font-weight:800; letter-spacing:.08em; color:#ECE7DD">PROFIT &amp; <span style="color:var(--ember)">FIRES</span> SCAN</div>
+    <div style="font-family:var(--mono); font-size:11px; color:#9D958A">Prepared for ${esc(personName)} · ${new Date().toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric"})}</div>`;
+  const foot = el("div");
+  foot.style.cssText="margin-top:26px; padding-top:14px; border-top:1px solid #34373F; font-family:var(--mono); font-size:11px; color:#9D958A; line-height:1.7";
+  foot.innerHTML=`Adam Redhead · Fractional COO · adamredhead.co · ${CFG.sendEmail}<br>Walk these results with me, no charge: ${CFG.bookUrl}<br>NRR Management LLC`;
+  shell.appendChild(head); shell.appendChild(clone); shell.appendChild(foot);
+  try{
+    if(!window.html2pdf) await loadScript("https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js");
+    const fname = "Profit-and-Fires-Scan-" + (personName.trim().replace(/[^A-Za-z0-9]+/g,"-").replace(/^-|-$/g,"")||"Report") + ".pdf";
+    await html2pdf().set({
+      margin:0, filename:fname,
+      image:{type:"jpeg", quality:.92},
+      /* scrollY/scrollX pinned to 0: the visitor is at the bottom of a long page
+         when they click, and html2canvas otherwise bakes that offset into the
+         capture — shifting the whole report out of frame. No windowWidth
+         override: it desyncs capture coordinates from layout and crops the left edge. */
+      html2canvas:{scale:2, backgroundColor:"#15161A", useCORS:true, logging:false, scrollY:0, scrollX:0},
+      jsPDF:{unit:"pt", format:"letter", orientation:"portrait"},
+      pagebreak:{mode:["avoid-all","css","legacy"]},
+    }).from(shell).save();
+  }catch(e){
+    console.warn("pdf generation failed, falling back to print", e);
+    window.print();
+  }
+}
+function block8_cta(st,R){
+  const b=el("div","block reveal");
+  b.innerHTML=`<span class="eyebrow steel">What a few minutes can see, and what it can't</span>
+    <p style="margin-top:12px; color:#D7D1C6">This scan reads your business from the parking lot. It can tell you which legs are short, what's probably burning, and roughly what it's costing. What it can't tell you is exactly why, or exactly how to fix it. That takes someone inside your actual numbers.</p>`;
+  st.appendChild(b);
+
+  const note=el("div","adamnote reveal");
+  note.innerHTML=`<div class="av">A</div><div class="nt"><span class="who">Adam Redhead</span>I'm Adam. I built and exited a $7M restoration company, and I ran all four of these legs as one system, because I had to. Now I do that inside other owners' businesses. If your shortest leg is the one I think it is, the fastest money you make this year might be the profit you stop losing.</div>`;
+  st.appendChild(note);
+
+  const bookHref = bookHrefFor(R);
+  const cta=el("div","ctablock reveal");
+  cta.style.marginTop="22px";
+  cta.innerHTML=`
+    <h3>Your next step</h3>
+    <div class="big">Walk your results with me.</div>
+    <p style="color:#CFC9BE; font-size:15px">30 minutes on a call. We go through your scan together, next to your real numbers, and I'll tell you straight where I'd start. No charge, no deck, no drip campaign.</p>
+    <a class="btn full" href="${bookHref}" target="_blank" rel="noopener">Book your results review <span class="arw">→</span></a>
+    <div class="cta-meta" style="margin-top:12px">Your scan rides along with the booking, so I've read it before we talk.</div>`;
+  st.appendChild(cta);
+
+  if(CFG.webhookUrl){
+    const dl=el("div","ctablock reveal");
+    dl.style.marginTop="16px";
+    dl.innerHTML=`
+      <h3>Take your report with you</h3>
+      <div class="big">Download your scan as a PDF.</div>
+      <p style="color:#CFC9BE; font-size:15px">Yours to keep, share with a partner, or sit with. The results on this page stay free either way. The PDF just comes with a name on it. Yours and mine.</p>
+      <button class="btn ghost full" type="button" data-gate-open>Download my report <span class="arw">→</span></button>
+      <form class="gateform" novalidate>
+        <div class="gf-row"><label>Your name</label><input type="text" name="name" autocomplete="name" maxlength="80" /></div>
+        <div class="gf-row"><label>Email</label><input type="email" name="email" autocomplete="email" inputmode="email" maxlength="120" /></div>
+        <div class="gf-row"><label>Phone (optional, if you'd rather I text you)</label><input type="tel" name="phone" autocomplete="tel" inputmode="tel" maxlength="30" /></div>
+        <button class="btn full" type="submit" style="margin-top:14px">Get my PDF <span class="arw">→</span></button>
+        <div class="gf-err"></div>
+        <div class="gf-fine">No drip campaign. I read these myself.</div>
+      </form>
+      <div class="gatedone hidden">Your report is downloading. If you want to walk it together, that's what the review is for. <a href="${bookHref}" target="_blank" rel="noopener">book it here</a>.</div>`;
+    st.appendChild(dl);
+
+    dl.querySelector("[data-gate-open]").onclick=(ev)=>{
+      ev.currentTarget.style.display="none";
+      dl.querySelector(".gateform").classList.add("open");
+      dl.querySelector("input[name=name]").focus();
+    };
+    dl.querySelector(".gateform").onsubmit=async(ev)=>{
+      ev.preventDefault();
+      const f=ev.currentTarget;
+      const who={ name:f.name.value, email:f.email.value, phone:f.phone.value };
+      const err=dl.querySelector(".gf-err");
+      if(!who.name.trim() || !/^\S+@\S+\.\S+$/.test(who.email.trim())){
+        err.textContent="Name and a working email. That's the toll. The phone's optional.";
+        err.style.display="block"; return;
+      }
+      err.style.display="none";
+      const btn=f.querySelector("[type=submit]");
+      btn.disabled=true; btn.innerHTML="Building your PDF…";
+      sendLead(R, who); /* fire-and-forget: the visitor's PDF never waits on plumbing */
+      await makePdf(R, who.name);
+      f.classList.remove("open");
+      dl.querySelector(".gatedone").classList.remove("hidden");
+    };
+  }
+
+  const dis=el("div","disclaimer");
+  dis.textContent="The dollar figures above are directional estimates based on your answers, built to show you the size of the opportunity. They are not a promise of results. Your real numbers will be specific to your business.";
+  st.appendChild(dis);
+}
+
+/* ------------------------------ RESET ------------------------------ */
+function resetState(){
+  Object.assign(S,{
+    page:0, A1:"",A1w:"",A2:"",A2w:"",A3:null,A3ns:false,A4:null,A4ns:false,
+    A5:null,A5ns:false,A6:null,A6ns:false,A7:null,A7ns:false,A8:null,A8ns:false,
+    S1:{ref:"",rep:"",ins:"",gc:"",ad:"",out:"",other:""},S1w:"",
+    S2:null,S2w:"",S3:null,S3w:"",S4:null,S4w:"",S5:null,S5w:"",
+    O1:null,O1w:"",O2:null,O2w:"",O3:null,O3w:"",O4:null,O4w:"",O5:null,O5w:"",
+    AC1:null,AC1w:"",AC2:[],AC2w:"",AC3:null,AC3w:"",AC4:null,AC4w:"",AC5:null,AC5w:"",
+    C1:[],C1w:"",C2:null,C2w:"",C3:null,C3w:"",C4:null,C4w:"",
+    X1:[],X1w:"",X2:null,X2w:"",X3:[],X3w:"",X4:"",
+  });
+  try{ localStorage.removeItem(SAVE_KEY); }catch(e){}
+}
+
+/* ------------------------------ BOOT ------------------------------- */
+restore();
+document.addEventListener("input", ()=>save());
+render();
+</script>
+</body>
+</html>
