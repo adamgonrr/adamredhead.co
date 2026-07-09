@@ -1728,6 +1728,20 @@ function loadScript(src){
   return new Promise((res,rej)=>{ const s=document.createElement("script");
     s.src=src; s.onload=res; s.onerror=()=>rej(new Error("script load failed")); document.head.appendChild(s); });
 }
+/* The full on-page report as readable text: clone the rendered results,
+   drop the sales close / chrome / charts, and read innerText (which needs a
+   rendered node — hence the offscreen attach — or line breaks are lost). */
+function fullReportText(){
+  const src = document.querySelector(".stage.rpt");
+  if(!src) return "";
+  const c = src.cloneNode(true);
+  c.querySelectorAll(".ctablock,.gateform,.gatedone,.adamnote,.disclaimer,button,.footer,svg,.brand").forEach(n=>n.remove());
+  const box = el("div");
+  box.style.cssText = "position:absolute; left:-9999px; top:0; width:800px";
+  box.appendChild(c); document.body.appendChild(box);
+  const t = c.innerText; box.remove();
+  return t.replace(/\n{3,}/g, "\n\n").trim();
+}
 async function sendLead(R, who){
   if(!CFG.webhookUrl) return;
   const parts = who.name.trim().split(/\s+/);
@@ -1737,7 +1751,9 @@ async function sendLead(R, who){
     score: R.overall, archetype: R.arch, trade: tradeLabel(), payer: payerLabel(),
     revenue_m: S.A3, headcount: S.A4, gm_pct: R.gm, net_pct: R.net,
     shortest_leg: leName(R.shortest), one_move: oneMove(R),
-    report: reportText(R),
+    /* the notification email renders <br>, not \n — compact summary on top,
+       the visitor's full on-page report underneath */
+    report: (reportText(R) + "\n\n=== THE FULL REPORT, AS THEY SAW IT ===\n\n" + fullReportText()).replace(/\n/g, "<br>"),
   };
   const ph = who.phone.trim(); if(ph) body.phone = ph; /* GHL 422s on empty strings — omit blank keys */
   try{
