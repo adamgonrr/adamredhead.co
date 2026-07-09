@@ -185,15 +185,15 @@
   @media (min-width:880px){ .letter-card{grid-template-columns:1.05fr .95fr; align-items:center} }
   .letter-card h2{margin-top:12px}
   .letter-card .blurb{color:#CBC5BA; margin:14px 0 0; font-size:16px}
-  .letter-form{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px}
+  .letter-form{display:flex; flex-direction:column; gap:10px; margin-top:18px; align-items:stretch}
   @media (min-width:880px){ .letter-form{margin-top:0} }
   .letter-form input{
-    flex:1 1 220px; min-width:0; font-family:var(--body); font-size:16px; color:var(--paper);
+    width:100%; min-width:0; font-family:var(--body); font-size:16px; color:var(--paper);
     background:rgba(0,0,0,.22); border:1px solid var(--line); border-radius:11px; padding:15px 16px;
   }
   .letter-form input::placeholder{color:var(--text-faint)}
   .letter-form input:focus{outline:none; border-color:var(--ember)}
-  .letter-form .btn{flex:0 0 auto}
+  .letter-form .btn{align-self:flex-start}
   .letter-note{font-family:var(--mono); font-size:12px; color:var(--text-faint); margin:12px 0 0; letter-spacing:.04em}
   .letter-done,.letter-err{display:none; font-family:var(--display); font-weight:700; font-size:17px; margin-top:8px}
   .letter-done{color:var(--strong, #5DAE84)}
@@ -344,7 +344,9 @@
       </div>
       <div>
         <form class="letter-form" id="letter-form" novalidate>
+          <input type="text" name="firstName" placeholder="First name" autocomplete="given-name" required aria-label="First name" />
           <input type="email" name="email" placeholder="you@company.com" autocomplete="email" required aria-label="Email address" />
+          <input type="text" name="businessName" placeholder="Business name (optional)" autocomplete="organization" aria-label="Business name (optional)" />
           <button class="btn" type="submit">Keep me posted <span class="arw">&rarr;</span></button>
         </form>
         <p class="letter-note">One email at a time. No drip campaign burying you.</p>
@@ -388,14 +390,16 @@
   var f = document.getElementById('letter-form');
   f.addEventListener('submit', function(e){
     e.preventDefault();
+    var first = f.firstName.value.trim();
     var email = f.email.value.trim();
+    if (!first) { f.firstName.focus(); return; }
     if (!email || email.indexOf('@') < 1) { f.email.focus(); return; }
     var btn = f.querySelector('button');
     btn.disabled = true; btn.style.opacity = .6;
     fetch(url, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({ email: email, source: 'adamredhead.co', tag: 'site-newsletter' })
+      body: JSON.stringify({ firstName: first, email: email, businessName: f.businessName.value.trim(), source: 'adamredhead.co', tag: 'site-newsletter' })
     }).then(function(r){
       if (!r.ok) throw new Error(r.status);
       f.style.display = 'none';
