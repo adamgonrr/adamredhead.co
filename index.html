@@ -186,6 +186,8 @@
   .letter-card h2{margin-top:12px}
   .letter-card .blurb{color:#CBC5BA; margin:14px 0 0; font-size:16px}
   .letter-form{display:flex; flex-direction:column; gap:10px; margin-top:18px; align-items:stretch}
+  .letter-form .name-row{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+  @media (max-width:480px){ .letter-form .name-row{grid-template-columns:1fr} }
   @media (min-width:880px){ .letter-form{margin-top:0} }
   .letter-form input{
     width:100%; min-width:0; font-family:var(--body); font-size:16px; color:var(--paper);
@@ -344,7 +346,10 @@
       </div>
       <div>
         <form class="letter-form" id="letter-form" novalidate>
-          <input type="text" name="firstName" placeholder="First name" autocomplete="given-name" required aria-label="First name" />
+          <div class="name-row">
+            <input type="text" name="firstName" placeholder="First name" autocomplete="given-name" required aria-label="First name" />
+            <input type="text" name="lastName" placeholder="Last name (optional)" autocomplete="family-name" aria-label="Last name (optional)" />
+          </div>
           <input type="email" name="email" placeholder="you@company.com" autocomplete="email" required aria-label="Email address" />
           <input type="text" name="businessName" placeholder="Business name (optional)" autocomplete="organization" aria-label="Business name (optional)" />
           <button class="btn" type="submit">Keep me posted <span class="arw">&rarr;</span></button>
@@ -399,7 +404,7 @@
     fetch(url, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({ firstName: first, email: email, businessName: f.businessName.value.trim(), source: 'adamredhead.co', tag: 'site-newsletter' })
+      body: JSON.stringify({ firstName: first, lastName: f.lastName.value.trim(), email: email, businessName: f.businessName.value.trim(), source: 'adamredhead.co', tag: 'site-newsletter' })
     }).then(function(r){
       if (!r.ok) throw new Error(r.status);
       f.style.display = 'none';
