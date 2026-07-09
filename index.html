@@ -11,8 +11,11 @@
 <meta property="og:url" content="https://adamredhead.co/" />
 <meta property="og:title" content="Adam Redhead — Operator. Builder. Buyer." />
 <meta property="og:description" content="I ran a $7M restoration company at 23% net. Now I run home service businesses alongside their owners, and I buy steady local businesses in Idaho's Treasure Valley." />
-<meta property="og:image" content="https://adamredhead.co/assets/adam-portrait.jpg" />
+<meta property="og:image" content="https://adamredhead.co/assets/og-card.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://adamredhead.co/assets/og-card.png" />
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2315161A'/%3E%3Crect x='9.5' y='9.5' width='13' height='13' rx='2.5' fill='%23EE7B3C' transform='rotate(45 16 16)'/%3E%3C/svg%3E" />
 
@@ -177,6 +180,25 @@
   .invite p{color:#CBC5BA; font-size:16px}
   .invite .links{margin-top:auto; padding-top:16px}
 
+  /* ---------- letter ---------- */
+  .letter-card{border:1px solid var(--line-soft); background:linear-gradient(var(--ink-2),var(--ink-2)); border-radius:16px; padding:34px 30px; display:grid; gap:8px 48px}
+  @media (min-width:880px){ .letter-card{grid-template-columns:1.05fr .95fr; align-items:center} }
+  .letter-card h2{margin-top:12px}
+  .letter-card .blurb{color:#CBC5BA; margin:14px 0 0; font-size:16px}
+  .letter-form{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px}
+  @media (min-width:880px){ .letter-form{margin-top:0} }
+  .letter-form input{
+    flex:1 1 220px; min-width:0; font-family:var(--body); font-size:16px; color:var(--paper);
+    background:rgba(0,0,0,.22); border:1px solid var(--line); border-radius:11px; padding:15px 16px;
+  }
+  .letter-form input::placeholder{color:var(--text-faint)}
+  .letter-form input:focus{outline:none; border-color:var(--ember)}
+  .letter-form .btn{flex:0 0 auto}
+  .letter-note{font-family:var(--mono); font-size:12px; color:var(--text-faint); margin:12px 0 0; letter-spacing:.04em}
+  .letter-done,.letter-err{display:none; font-family:var(--display); font-weight:700; font-size:17px; margin-top:8px}
+  .letter-done{color:var(--strong, #5DAE84)}
+  .letter-err{color:var(--ember)}
+
   /* ---------- contact ---------- */
   .contact .lead{max-width:52ch}
   .contact .cta-row{margin-top:26px}
@@ -312,6 +334,27 @@
   </div>
 </section>
 
+<section id="letter" data-webhook="">
+  <div class="wrap">
+    <div class="letter-card">
+      <div>
+        <span class="eyebrow"><span class="dot"></span>The letter</span>
+        <h2>What I learn, as I learn it.</h2>
+        <p class="blurb">Running home service businesses, buying them, and the numbers behind both. Straight from me &mdash; no pitch parade, unsubscribe anytime.</p>
+      </div>
+      <div>
+        <form class="letter-form" id="letter-form" novalidate>
+          <input type="email" name="email" placeholder="you@company.com" autocomplete="email" required aria-label="Email address" />
+          <button class="btn" type="submit">Keep me posted <span class="arw">&rarr;</span></button>
+        </form>
+        <p class="letter-note">One email at a time. No drip campaign burying you.</p>
+        <p class="letter-done" id="letter-done">Got it &mdash; you&rsquo;re on the list.</p>
+        <p class="letter-err" id="letter-err">Something hiccuped. Email me instead: adam@gonrr.com</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="contact" class="contact">
   <div class="wrap">
     <span class="eyebrow"><span class="dot"></span>Contact</span>
@@ -337,5 +380,32 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  var s = document.getElementById('letter');
+  var url = s.getAttribute('data-webhook');
+  if (!url) { s.style.display = 'none'; return; }
+  var f = document.getElementById('letter-form');
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var email = f.email.value.trim();
+    if (!email || email.indexOf('@') < 1) { f.email.focus(); return; }
+    var btn = f.querySelector('button');
+    btn.disabled = true; btn.style.opacity = .6;
+    fetch(url, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ email: email, source: 'adamredhead.co', tag: 'site-newsletter' })
+    }).then(function(r){
+      if (!r.ok) throw new Error(r.status);
+      f.style.display = 'none';
+      document.getElementById('letter-done').style.display = 'block';
+    }).catch(function(){
+      btn.disabled = false; btn.style.opacity = 1;
+      document.getElementById('letter-err').style.display = 'block';
+    });
+  });
+})();
+</script>
 </body>
 </html>
