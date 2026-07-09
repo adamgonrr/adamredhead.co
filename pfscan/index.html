@@ -1717,13 +1717,19 @@ function reportText(R){
   return L.join("\n");
 }
 /* Booking link with the scan riding along: Calendly prefills its first
-   custom question from ?a1= — the report lands inside the booking itself. */
-function bookHrefFor(R){
+   custom question from ?a1= — the report lands inside the booking itself.
+   With a known identity, name/email prefill too, so nothing is typed twice. */
+function bookHrefFor(R, who){
   const p = new URLSearchParams();
   p.set("utm_source","pfscan");
+  if(who && who.name && who.name.trim()) p.set("name", who.name.trim());
+  if(who && who.email && who.email.trim()) p.set("email", who.email.trim());
   p.set("a1", "— Profit & Fires Scan —\n" + reportText(R));
   return CFG.bookUrl + (CFG.bookUrl.includes("?") ? "&" : "?") + p.toString();
 }
+/* Identity memory: whoever passes one gate is never asked again. */
+function loadId(){ try{ return JSON.parse(localStorage.getItem("pf_scan_id")) || null; }catch(e){ return null; } }
+function saveId(w){ try{ localStorage.setItem("pf_scan_id", JSON.stringify(w)); }catch(e){} }
 function loadScript(src){
   return new Promise((res,rej)=>{ const s=document.createElement("script");
     s.src=src; s.onload=res; s.onerror=()=>rej(new Error("script load failed")); document.head.appendChild(s); });
@@ -1792,18 +1798,20 @@ function emailReportHtml(){
   });
   return out.join("");
 }
-async function sendLead(R, who){
+async function sendLead(R, who, action){
   if(!CFG.webhookUrl) return;
   const parts = who.name.trim().split(/\s+/);
   const body = {
     first_name: parts[0]||"", last_name: parts.slice(1).join(" "),
     email: who.email.trim(), source: "profit-fires-scan",
+    action: action || "downloaded the report",
     score: R.overall, archetype: R.arch, trade: tradeLabel(), payer: payerLabel(),
     revenue_m: S.A3, headcount: S.A4, gm_pct: R.gm, net_pct: R.net,
     shortest_leg: leName(R.shortest), one_move: oneMove(R),
-    /* the notification email renders HTML — compact summary on top,
-       the visitor's full on-page report styled underneath */
-    report: reportText(R).replace(/\n/g, "<br>")
+    /* the notification email renders HTML — the action stamp, the compact
+       summary, then the visitor's full on-page report styled underneath */
+    report: '<div style="font-size:13px; font-weight:700; letter-spacing:.5px; text-transform:uppercase; color:#C9531F">— They ' + (action || "downloaded the report") + ' —</div><br>'
+      + reportText(R).replace(/\n/g, "<br>")
       + '<br><br><div style="font-size:16px; font-weight:800; letter-spacing:.5px; color:#111; border-top:2px solid #ddd; padding-top:14px">THE FULL REPORT, AS THEY SAW IT</div>'
       + emailReportHtml(),
   };
@@ -1869,18 +1877,68 @@ function block8_cta(st,R){
   note.innerHTML=`<div class="av">A</div><div class="nt"><span class="who">Adam Redhead</span>I'm Adam. I built and exited a $7M restoration company, and I ran all four of these legs as one system, because I had to. Now I do that inside other owners' businesses. If your shortest leg is the one I think it is, the fastest money you make this year might be the profit you stop losing.</div>`;
   st.appendChild(note);
 
-  const bookHref = bookHrefFor(R);
   const cta=el("div","ctablock reveal");
   cta.style.marginTop="22px";
   cta.innerHTML=`
     <h3>Your next step</h3>
     <div class="big">Walk your results with me.</div>
     <p style="color:#CFC9BE; font-size:15px">30 minutes on a call. We go through your scan together, next to your real numbers, and I'll tell you straight where I'd start. No charge, no deck, no drip campaign.</p>
-    <a class="btn full" href="${bookHref}" target="_blank" rel="noopener">Book your results review <span class="arw">→</span></a>
+    <button class="btn full" type="button" data-book>Book your results review <span class="arw">→</span></button>
+    <form class="gateform" novalidate>
+      <div class="gf-row"><label>Your name</label><input type="text" name="name" autocomplete="name" maxlength="80" /></div>
+      <div class="gf-row"><label>Email</label><input type="email" name="email" autocomplete="email" inputmode="email" maxlength="120" /></div>
+      <button class="btn full" type="submit" style="margin-top:14px">Pick your time <span class="arw">→</span></button>
+      <div class="gf-err"></div>
+      <div class="gf-fine">So your scan is on my desk before we talk. No drip campaign.</div>
+    </form>
+    <div class="gatedone hidden">The calendar opened in a new tab, and your scan is already on my desk. If the tab didn't open, <a data-book-link href="#" target="_blank">it's here</a>.</div>
     <div class="cta-meta" style="margin-top:12px">Your scan rides along with the booking, so I've read it before we talk.</div>`;
   st.appendChild(cta);
 
+  function openCalendly(who){
+    const href = bookHrefFor(R, who);
+    const dn = cta.querySelector(".gatedone");
+    dn.querySelector("[data-book-link]").href = href;
+    dn.classList.remove("hidden");
+    const w = window.open(href, "_blank");
+    if(!w) location.href = href; /* popup blocked — navigate instead */
+  }
+  cta.querySelector("[data-book]").onclick=(ev)=>{
+    const known = loadId();
+    if(!CFG.webhookUrl){
+      /* no capture endpoint: nothing to gate for — straight to the calendar */
+      openCalendly(known);
+      return;
+    }
+    if(known && known.email){
+      /* returning identity: no form, straight to the calendar, report fires */
+      ev.currentTarget.style.display="none";
+      sendLead(R, known, "booked a results review");
+      openCalendly(known);
+    } else {
+      ev.currentTarget.style.display="none";
+      cta.querySelector(".gateform").classList.add("open");
+      cta.querySelector("input[name=name]").focus();
+    }
+  };
+  cta.querySelector(".gateform").onsubmit=(ev)=>{
+    ev.preventDefault();
+    const f=ev.currentTarget;
+    const prev = loadId() || {};
+    const who={ name:f.name.value, email:f.email.value, phone:prev.phone||"" };
+    const err=cta.querySelector(".gf-err");
+    if(!who.name.trim() || !/^\S+@\S+\.\S+$/.test(who.email.trim())){
+      err.textContent="Name and a working email, then the calendar opens.";
+      err.style.display="block"; return;
+    }
+    err.style.display="none"; saveId(who);
+    sendLead(R, who, "booked a results review"); /* keepalive: survives leaving the page */
+    f.classList.remove("open");
+    openCalendly(who);
+  };
+
   if(CFG.webhookUrl){
+    const known0 = loadId() || {name:"",email:"",phone:""};
     const dl=el("div","ctablock reveal");
     dl.style.marginTop="16px";
     dl.innerHTML=`
@@ -1889,14 +1947,14 @@ function block8_cta(st,R){
       <p style="color:#CFC9BE; font-size:15px">Yours to keep, share with a partner, or sit with. The results on this page stay free either way. The PDF just comes with a name on it. Yours and mine.</p>
       <button class="btn ghost full" type="button" data-gate-open>Download my report <span class="arw">→</span></button>
       <form class="gateform" novalidate>
-        <div class="gf-row"><label>Your name</label><input type="text" name="name" autocomplete="name" maxlength="80" /></div>
-        <div class="gf-row"><label>Email</label><input type="email" name="email" autocomplete="email" inputmode="email" maxlength="120" /></div>
-        <div class="gf-row"><label>Phone (optional, if you'd rather I text you)</label><input type="tel" name="phone" autocomplete="tel" inputmode="tel" maxlength="30" /></div>
+        <div class="gf-row"><label>Your name</label><input type="text" name="name" autocomplete="name" maxlength="80" value="${esc(known0.name)}" /></div>
+        <div class="gf-row"><label>Email</label><input type="email" name="email" autocomplete="email" inputmode="email" maxlength="120" value="${esc(known0.email)}" /></div>
+        <div class="gf-row"><label>Phone (optional, if you'd rather I text you)</label><input type="tel" name="phone" autocomplete="tel" inputmode="tel" maxlength="30" value="${esc(known0.phone)}" /></div>
         <button class="btn full" type="submit" style="margin-top:14px">Get my PDF <span class="arw">→</span></button>
         <div class="gf-err"></div>
         <div class="gf-fine">No drip campaign. I read these myself.</div>
       </form>
-      <div class="gatedone hidden">Your report is downloading. If you want to walk it together, that's what the review is for. <a href="${bookHref}" target="_blank" rel="noopener">book it here</a>.</div>`;
+      <div class="gatedone hidden">Your report is downloading. If you want to walk it together, that's what the review is for. <a data-book-link href="#" target="_blank">Book it here</a>.</div>`;
     st.appendChild(dl);
 
     dl.querySelector("[data-gate-open]").onclick=(ev)=>{
@@ -1913,13 +1971,15 @@ function block8_cta(st,R){
         err.textContent="Name and a working email. That's the toll. The phone's optional.";
         err.style.display="block"; return;
       }
-      err.style.display="none";
+      err.style.display="none"; saveId(who);
       const btn=f.querySelector("[type=submit]");
       btn.disabled=true; btn.innerHTML="Building your PDF…";
-      sendLead(R, who); /* fire-and-forget: the visitor's PDF never waits on plumbing */
+      sendLead(R, who, "downloaded the report"); /* fire-and-forget: the visitor's PDF never waits on plumbing */
       await makePdf(R, who.name);
       f.classList.remove("open");
-      dl.querySelector(".gatedone").classList.remove("hidden");
+      const dn=dl.querySelector(".gatedone");
+      dn.querySelector("[data-book-link]").href = bookHrefFor(R, who);
+      dn.classList.remove("hidden");
     };
   }
 
