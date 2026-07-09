@@ -1,63 +1,341 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Adam Redhead</title>
-  <meta name="description" content="Adam Redhead — operator, builder. Something is coming.">
-  <style>
-    :root {
-      --bg: #101214;
-      --ink: #ece7df;
-      --muted: #8a857c;
-      --rule: #2c2f33;
-    }
-    @media (prefers-color-scheme: light) {
-      :root {
-        --bg: #faf8f4;
-        --ink: #1c1e20;
-        --muted: #77726a;
-        --rule: #ddd8cf;
-      }
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      background: var(--bg);
-      color: var(--ink);
-      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem;
-    }
-    main { max-width: 34rem; }
-    h1 {
-      font-size: clamp(2.2rem, 6vw, 3.4rem);
-      font-weight: 400;
-      letter-spacing: 0.02em;
-    }
-    .rule {
-      width: 3.5rem;
-      height: 1px;
-      background: var(--rule);
-      margin: 1.75rem auto;
-    }
-    p {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      font-size: 0.8rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Adam Redhead — Operator. Builder. Buyer.</title>
+<meta name="description" content="I ran a $7M restoration company at 23% net. Now I run home service businesses alongside their owners — sales, ops, and money as one system — and I buy steady local businesses in Idaho's Treasure Valley." />
+<link rel="canonical" href="https://adamredhead.co/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://adamredhead.co/" />
+<meta property="og:title" content="Adam Redhead — Operator. Builder. Buyer." />
+<meta property="og:description" content="I ran a $7M restoration company at 23% net. Now I run home service businesses alongside their owners, and I buy steady local businesses in Idaho's Treasure Valley." />
+<meta property="og:image" content="https://adamredhead.co/assets/adam-portrait.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2315161A'/%3E%3Crect x='9.5' y='9.5' width='13' height='13' rx='2.5' fill='%23EE7B3C' transform='rotate(45 16 16)'/%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Adam Redhead",
+  "url": "https://adamredhead.co/",
+  "image": "https://adamredhead.co/assets/adam-portrait.jpg",
+  "jobTitle": "Home Services & Trades Operator",
+  "description": "Built and ran a $7M restoration company at 23% net margin. Runs home service and trades businesses alongside their owners, and acquires steady local businesses in Idaho's Treasure Valley.",
+  "knowsAbout": ["Restoration", "Home Services", "Trades", "Business Operations", "Sales", "Business Acquisition"],
+  "sameAs": ["https://www.linkedin.com/in/adam-redhead/"]
+}
+</script>
+
+<style>
+  :root{
+    --ink:#15161A; --ink-2:#1B1D23; --ink-3:#23262E; --ink-4:#2B2F38;
+    --line:#34373F; --line-soft:#2A2D35;
+    --paper:#ECE7DD; --text-dim:#9D958A; --text-faint:#6E6A63;
+    --ember:#EE7B3C; --ember-deep:#C9531F; --ember-soft:#EE7B3C22;
+    --steel:#6E93B8;
+    --display:'Archivo',system-ui,sans-serif;
+    --body:'IBM Plex Sans',system-ui,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,monospace;
+    --shadow:0 20px 50px -28px rgba(0,0,0,.9);
+    --maxw:1020px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--ink); color:var(--paper);
+    font-family:var(--body); font-size:17px; line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    background-image:
+      radial-gradient(120% 80% at 50% -10%, #20222A 0%, var(--ink) 55%),
+      radial-gradient(60% 50% at 100% 0%, rgba(238,123,60,.06) 0%, rgba(0,0,0,0) 60%);
+    background-attachment:fixed;
+  }
+  @media (prefers-reduced-motion: reduce){ *{animation:none!important; transition:none!important; scroll-behavior:auto!important} }
+
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px}
+  .eyebrow{font-family:var(--mono); font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:var(--ember); font-weight:600}
+  .eyebrow .dot{display:inline-block; width:9px; height:9px; border-radius:2px; background:var(--ember); transform:rotate(45deg); margin-right:10px; vertical-align:1px}
+
+  h1,h2,h3{font-family:var(--display); margin:0; line-height:1.05; letter-spacing:-.012em; text-wrap:balance}
+  h1{font-weight:900; font-size:clamp(36px,7.2vw,64px)}
+  h2{font-weight:800; font-size:clamp(26px,5vw,38px)}
+  h3{font-weight:700; font-size:20px}
+  p{margin:0 0 1em}
+  .lead{font-size:clamp(17px,2.4vw,19px); color:#CBC5BA}
+  .small{font-size:14px; color:var(--text-dim)}
+  .mono{font-family:var(--mono)}
+  b,strong{font-weight:600; color:#F6F1E7}
+  .heat{color:var(--ember)}
+  a{color:inherit}
+  :focus-visible{outline:2px solid var(--ember); outline-offset:3px; border-radius:4px}
+
+  /* ---------- header ---------- */
+  header{border-bottom:1px solid var(--line-soft)}
+  .bar{display:flex; align-items:center; gap:18px; padding:18px 0}
+  .brand{display:flex; align-items:center; gap:11px; text-decoration:none}
+  .brand .mk{width:26px; height:26px; border-radius:6px; background:var(--ink-3); display:grid; place-items:center; flex:0 0 auto}
+  .brand .mk i{width:11px; height:11px; border-radius:2px; background:var(--ember); transform:rotate(45deg)}
+  .brand .nm{font-family:var(--display); font-weight:800; font-size:15px; letter-spacing:.02em}
+  .brand .nm span{color:var(--ember)}
+  nav{margin-left:auto; display:flex; gap:22px}
+  nav a{font-family:var(--mono); font-size:12.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--text-dim); text-decoration:none; font-weight:600}
+  nav a:hover{color:var(--paper)}
+  @media (max-width:720px){ nav{display:none} }
+
+  /* ---------- buttons ---------- */
+  .btn{
+    appearance:none; cursor:pointer; font-family:var(--display); font-weight:800;
+    font-size:16.5px; border:0; border-radius:11px;
+    padding:15px 21px; background:var(--ember); color:#1A0E06;
+    display:inline-flex; align-items:center; gap:10px; text-decoration:none;
+    box-shadow:0 12px 26px -14px var(--ember-deep); transition:transform .12s ease, filter .12s ease;
+  }
+  .btn:hover{filter:brightness(1.06); transform:translateY(-1px)}
+  .btn:active{transform:translateY(0)}
+  .btn.ghost{background:transparent; color:var(--paper); border:1px solid var(--line); box-shadow:none; font-weight:600}
+  .btn.ghost:hover{border-color:var(--text-dim); filter:none}
+  .btn .arw{font-family:var(--body); font-weight:700}
+  .textlink{font-family:var(--display); font-weight:700; font-size:16px; color:var(--ember); text-decoration:none}
+  .textlink:hover{text-decoration:underline; text-underline-offset:4px}
+  .textlink.quiet{color:var(--paper); font-weight:600}
+
+  /* ---------- hero ---------- */
+  .hero{padding:clamp(48px,9vw,96px) 0 clamp(40px,6vw,64px)}
+  .hero-grid{display:grid; gap:40px; align-items:center}
+  @media (min-width:880px){ .hero-grid{grid-template-columns:1.25fr .75fr; gap:56px} }
+  .hero h1{margin:18px 0 0}
+  .hero .lead{margin-top:22px; max-width:56ch}
+  .cta-row{display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-top:32px}
+  .cta-meta{font-family:var(--mono); font-size:12.5px; color:var(--text-dim); line-height:1.5}
+  .cta-meta b{color:var(--paper); font-weight:600}
+
+  .portrait{position:relative; width:min(380px,100%); margin:0 auto}
+  .portrait::before{content:""; position:absolute; inset:-14px; border-radius:22px; background:radial-gradient(70% 70% at 50% 30%, var(--ember-soft), transparent 70%); z-index:0}
+  .portrait img{position:relative; z-index:1; width:100%; height:auto; display:block; border-radius:16px; border:1px solid var(--line); box-shadow:var(--shadow)}
+  .portrait figcaption{position:relative; z-index:1; font-family:var(--mono); font-size:11.5px; color:var(--text-faint); letter-spacing:.08em; text-transform:uppercase; margin-top:12px; text-align:center}
+
+  /* ---------- stats ---------- */
+  .stats{border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft); background:rgba(0,0,0,.14)}
+  .stats .row{display:grid; grid-template-columns:repeat(2,1fr)}
+  @media (min-width:720px){ .stats .row{grid-template-columns:repeat(4,1fr)} }
+  .stat{padding:26px 18px; border-right:1px solid var(--line-soft)}
+  .stat:last-child{border-right:0}
+  @media (max-width:719px){ .stat:nth-child(2){border-right:0} .stat:nth-child(-n+2){border-bottom:1px solid var(--line-soft)} }
+  .stat .num{font-family:var(--display); font-weight:900; font-size:clamp(26px,4vw,34px); color:var(--ember); letter-spacing:-.01em}
+  .stat .lbl{font-family:var(--mono); font-size:12px; color:var(--text-dim); letter-spacing:.1em; text-transform:uppercase; margin-top:6px}
+
+  /* ---------- sections ---------- */
+  section{padding:clamp(56px,9vw,92px) 0; border-top:1px solid var(--line-soft)}
+  #work{border-top:0}
+  .section-head{margin-bottom:36px}
+  .section-head h2{margin-top:14px}
+  .section-head p{margin-top:14px; color:#CBC5BA; max-width:62ch}
+
+  /* ---------- doors ---------- */
+  .doors{display:grid; gap:18px}
+  @media (min-width:880px){ .doors{grid-template-columns:1fr 1fr} }
+  .door{border:1px solid var(--line-soft); background:linear-gradient(var(--ink-2),var(--ink-2)); border-radius:16px; padding:30px 28px; display:flex; flex-direction:column}
+  .door .tag{font-family:var(--mono); font-size:11.5px; font-weight:600; color:var(--ember); letter-spacing:.16em; text-transform:uppercase}
+  .door h3{font-size:clamp(21px,2.6vw,25px); margin:12px 0 12px; line-height:1.2}
+  .door p{color:#CBC5BA; font-size:16px}
+  .door .links{margin-top:auto; padding-top:18px; display:flex; flex-direction:column; gap:10px}
+
+  /* ---------- story ---------- */
+  .story-grid{display:grid; gap:36px; align-items:center}
+  @media (min-width:880px){ .story-grid{grid-template-columns:.9fr 1.1fr; gap:56px} }
+  .story-grid figure{margin:0}
+  .story-grid img{width:100%; height:auto; display:block; border-radius:16px; border:1px solid var(--line); box-shadow:var(--shadow)}
+  .story-grid figcaption{font-family:var(--mono); font-size:11.5px; color:var(--text-faint); letter-spacing:.08em; text-transform:uppercase; margin-top:12px}
+  .story-grid h2{margin-top:14px}
+  .story-grid .lead{margin-top:18px}
+  .story-grid p{color:#CBC5BA}
+
+  /* ---------- podcast ---------- */
+  .pods{display:grid; gap:18px}
+  @media (min-width:880px){ .pods{grid-template-columns:1.15fr .85fr} }
+  .pod{border:1px solid var(--line-soft); background:var(--ink-2); border-radius:16px; overflow:hidden; display:flex; flex-direction:column; text-decoration:none; transition:border-color .15s}
+  .pod:hover{border-color:var(--text-faint)}
+  .pod .thumb{position:relative; aspect-ratio:16/9; overflow:hidden}
+  .pod .thumb img{width:100%; height:100%; object-fit:cover; display:block}
+  .pod .thumb .play{position:absolute; inset:0; display:grid; place-items:center}
+  .pod .thumb .play i{width:58px; height:58px; border-radius:50%; background:rgba(21,22,26,.82); border:1px solid var(--line); display:grid; place-items:center; font-style:normal; color:var(--ember); font-size:20px; padding-left:4px}
+  .pod .body{padding:22px 24px 24px}
+  .pod .tag{font-family:var(--mono); font-size:11.5px; font-weight:600; color:var(--ember); letter-spacing:.16em; text-transform:uppercase}
+  .pod h3{margin:10px 0 8px}
+  .pod p{color:#CBC5BA; font-size:15.5px; margin:0}
+  .pod .watch{font-family:var(--mono); font-size:12.5px; color:var(--text-dim); margin-top:14px; letter-spacing:.06em; text-transform:uppercase; font-weight:600}
+  .invite{border:1px dashed var(--line); background:transparent; border-radius:16px; padding:30px 28px; display:flex; flex-direction:column}
+  .invite h3{margin:12px 0}
+  .invite p{color:#CBC5BA; font-size:16px}
+  .invite .links{margin-top:auto; padding-top:16px}
+
+  /* ---------- contact ---------- */
+  .contact .lead{max-width:52ch}
+  .contact .cta-row{margin-top:26px}
+  .outlinks{display:flex; gap:10px 26px; flex-wrap:wrap; margin-top:36px}
+  .outlinks a{font-family:var(--mono); font-size:12.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--text-dim); text-decoration:none; font-weight:600}
+  .outlinks a:hover{color:var(--paper)}
+
+  footer{border-top:1px solid var(--line-soft); padding:26px 0 44px}
+  footer .inner{display:flex; gap:12px 24px; flex-wrap:wrap; align-items:center}
+  footer p{margin:0; font-family:var(--mono); font-size:12px; color:var(--text-faint); letter-spacing:.05em}
+  footer .route{margin-left:auto}
+  footer .route b{color:var(--text-dim); font-weight:600}
+</style>
 </head>
 <body>
-  <main>
-    <h1>Adam Redhead</h1>
-    <div class="rule"></div>
-    <p>Coming Soon</p>
-  </main>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="/">
+      <span class="mk"><i></i></span>
+      <span class="nm">Adam <span>Redhead</span></span>
+    </a>
+    <nav aria-label="Sections">
+      <a href="#work">Work with me</a>
+      <a href="#sell">Sell your business</a>
+      <a href="#podcast">Podcast</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow"><span class="dot"></span>Operator &middot; Builder &middot; Buyer</span>
+      <h1><span class="heat">23% net margin</span> on a $7M restoration company.</h1>
+      <p class="lead">That was mine. Restoration Heroes &mdash; bootstrapped in 2009 from a wrapped Tacoma and a $500 trailer, close to 40 people by year five, exited to an operator I trust. Now I do two things: <b>I run home service businesses alongside their owners, and I buy them.</b></p>
+      <div class="cta-row">
+        <a class="btn" href="/pfscan">Run the free Profit &amp; Fires Scan <span class="arw">&rarr;</span></a>
+        <a class="btn ghost" href="https://calendly.com/adamredhead/30min">Book a call</a>
+      </div>
+      <p class="cta-meta" style="margin-top:14px">The Scan reads your business in <b>5 minutes</b> &middot; no email required</p>
+    </div>
+    <figure class="portrait">
+      <img src="/assets/adam-portrait.jpg" alt="Adam Redhead in front of a Restoration Heroes van" fetchpriority="high" width="800" height="800" />
+      <figcaption>Adam Redhead &middot; Restoration Heroes</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div class="stats" aria-label="Track record">
+  <div class="wrap row">
+    <div class="stat"><div class="num">$7M</div><div class="lbl">Revenue by year five</div></div>
+    <div class="stat"><div class="num">23%</div><div class="lbl">Net margin</div></div>
+    <div class="stat"><div class="num">$100K+</div><div class="lbl">Monthly, to the bottom line</div></div>
+    <div class="stat"><div class="num">~40</div><div class="lbl">People on the team</div></div>
+  </div>
+</div>
+
+<section id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><span class="dot"></span>What I do now</span>
+      <h2>Two ways in.</h2>
+      <p>Everything I do runs on the same conviction: a business isn&rsquo;t a sales problem or an ops problem or a money problem. It&rsquo;s one machine, and the legs either pull together or they pull it apart.</p>
+    </div>
+    <div class="doors">
+      <div class="door" id="fix">
+        <span class="tag">01 &middot; Work with me</span>
+        <h3>I get the whole machine pulling one direction.</h3>
+        <p>General management for <b>$3M&ndash;$15M home service and trades companies</b> &mdash; restoration, plumbing, HVAC, and their cousins. Sales, ops, and money as one system, worked from inside your business, not advised from the bleachers. Part-time or full-bore.</p>
+        <div class="links">
+          <a class="textlink" href="/pfscan">Start with the free Profit &amp; Fires Scan &rarr;</a>
+          <a class="textlink quiet" href="https://calendly.com/adamredhead/30min">Or book 30 minutes &rarr;</a>
+        </div>
+      </div>
+      <div class="door" id="sell">
+        <span class="tag">02 &middot; Sell your business</span>
+        <h3>I buy businesses like the one I built.</h3>
+        <p>Home services, trades, or a steady local operation &mdash; in and around <b>Idaho&rsquo;s Treasure Valley</b>. You get a buyer who has run the trucks, not a spreadsheet with a fund behind it. Full value, any structure, and a process built around you.</p>
+        <div class="links">
+          <a class="textlink" href="https://our-idaho-adventure.lovable.app" target="_blank" rel="noopener">Meet the family behind the offer &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="story">
+  <div class="wrap story-grid">
+    <figure>
+      <img src="/assets/family-lake.webp" alt="Adam and family hiking at an alpine lake in the Sierra" loading="lazy" width="1600" height="1596" />
+      <figcaption>The board of directors</figcaption>
+    </figure>
+    <div>
+      <span class="eyebrow"><span class="dot"></span>The story</span>
+      <h2>Built from a truck and a $500 trailer.</h2>
+      <p class="lead">I started Restoration Heroes in 2009 &mdash; crawl spaces, mold scrapes, sales calls, middle-of-the-night emergencies. I did all of it, then built the team that did it better than me.</p>
+      <p>By year five: close to 40 people, past $7 million, and margins the spreadsheet-buyers kept asking me to explain. The brand is still one of the most respected restoration names in Orange County.</p>
+      <p>These days the thing I&rsquo;m building is bigger than one company: two boys, a family headed for Idaho, and work I choose &mdash; running owner-led businesses from the inside, and looking for the next one worth buying.</p>
+    </div>
+  </div>
+</section>
+
+<section id="podcast">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><span class="dot"></span>The long-form version</span>
+      <h2>Podcasts I&rsquo;ve been on.</h2>
+    </div>
+    <div class="pods">
+      <a class="pod" href="https://www.youtube.com/watch?v=Sq2uw6Fth8E" target="_blank" rel="noopener">
+        <div class="thumb">
+          <img src="/assets/dailybread.jpg" alt="Adam Redhead on the Daily Bread Podcast" loading="lazy" />
+          <span class="play"><i>&#9654;</i></span>
+        </div>
+        <div class="body">
+          <span class="tag">Episode &middot; January 2026</span>
+          <h3>Daily Bread Podcast</h3>
+          <p>An hour and forty minutes on the whole arc &mdash; building Restoration Heroes, partnerships, faith, fatherhood, and what a man builds next.</p>
+          <div class="watch">Watch on YouTube &nearr;</div>
+        </div>
+      </a>
+      <div class="invite">
+        <span class="eyebrow"><span class="dot"></span>Have a show?</span>
+        <h3>I&rsquo;m saying yes to podcasts right now.</h3>
+        <p>If your audience is owners, operators, or men building something that outlasts them, I&rsquo;ll bring real stories with real numbers &mdash; the wins and the scar tissue.</p>
+        <div class="links">
+          <a class="textlink" href="mailto:adam@gonrr.com?subject=Podcast%20invite">Invite me on &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <span class="eyebrow"><span class="dot"></span>Contact</span>
+    <h2 style="margin-top:14px">Talk to me.</h2>
+    <p class="lead" style="margin-top:16px">The fastest path is 30 minutes on my calendar. Email works too &mdash; it goes to me, not a team.</p>
+    <div class="cta-row">
+      <a class="btn" href="https://calendly.com/adamredhead/30min">Book 30 minutes <span class="arw">&rarr;</span></a>
+      <a class="btn ghost" href="mailto:adam@gonrr.com">adam@gonrr.com</a>
+    </div>
+    <div class="outlinks">
+      <a href="https://www.linkedin.com/in/adam-redhead/" target="_blank" rel="noopener">LinkedIn &nearr;</a>
+      <a href="https://www.heroes911.com" target="_blank" rel="noopener">Restoration Heroes &nearr;</a>
+      <a href="https://our-idaho-adventure.lovable.app" target="_blank" rel="noopener">Redhead Acquisition &nearr;</a>
+      <a href="/pfscan">Profit &amp; Fires Scan</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap inner">
+    <p>&copy; 2026 Adam Redhead</p>
+    <p class="route"><b>Orange County, CA</b> &rarr; <b>Treasure Valley, ID</b></p>
+  </div>
+</footer>
+
 </body>
 </html>
