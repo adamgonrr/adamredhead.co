@@ -1728,19 +1728,69 @@ function loadScript(src){
   return new Promise((res,rej)=>{ const s=document.createElement("script");
     s.src=src; s.onload=res; s.onerror=()=>rej(new Error("script load failed")); document.head.appendChild(s); });
 }
-/* The full on-page report as readable text: clone the rendered results,
-   drop the sales close / chrome / charts, and read innerText (which needs a
-   rendered node — hence the offscreen attach — or line breaks are lost). */
-function fullReportText(){
+/* The full on-page report serialized as styled email HTML: walk the rendered
+   results block by block (minus the sales close, chrome, and charts) and map
+   each known structure to email-safe inline-styled markup. Emails render on
+   white, so colors here are email colors, not page colors. */
+function emailReportHtml(){
   const src = document.querySelector(".stage.rpt");
   if(!src) return "";
   const c = src.cloneNode(true);
-  c.querySelectorAll(".ctablock,.gateform,.gatedone,.adamnote,.disclaimer,button,.footer,svg,.brand").forEach(n=>n.remove());
-  const box = el("div");
-  box.style.cssText = "position:absolute; left:-9999px; top:0; width:800px";
-  box.appendChild(c); document.body.appendChild(box);
-  const t = c.innerText; box.remove();
-  return t.replace(/\n{3,}/g, "\n\n").trim();
+  c.querySelectorAll(".ctablock,.gateform,.gatedone,.adamnote,.disclaimer,button,.footer,svg,.brand,.legs-vis,.meter,.divider").forEach(n=>n.remove());
+  const t = n => n ? n.textContent.replace(/\s+/g," ").trim() : "";
+  const P = "margin:6px 0; font-size:14px; line-height:1.55; color:#222";
+  const GRAY = "color:#7a7a7a";
+  const HD = "margin:16px 0 4px; font-size:12.5px; font-weight:700; letter-spacing:.5px; text-transform:uppercase; color:#444";
+  const out = [];
+  const line = h => out.push(h);
+  Array.from(c.children).forEach(n=>{
+    const cl = n.classList;
+    if(cl.contains("archetype")){
+      line(`<div style="margin:4px 0 0; font-size:11px; letter-spacing:1px; text-transform:uppercase; ${GRAY}">Scan score</div>`);
+      line(`<div style="font-size:24px; font-weight:800; color:#111">${t(n.querySelector(".scorebig"))}/100 · ${t(n.querySelector(".arch-name"))}</div>`);
+      n.querySelectorAll(".arch-body").forEach(b=>line(`<p style="${P}">${t(b)}</p>`));
+    } else if(cl.contains("block")){
+      const eb=t(n.querySelector(".eyebrow")), h2=t(n.querySelector("h2")), h3=t(n.querySelector("h3"));
+      if(eb) line(`<div style="margin:22px 0 0; font-size:11px; letter-spacing:1px; text-transform:uppercase; ${GRAY}">${eb}</div>`);
+      if(h2) line(`<div style="margin:2px 0 8px; font-size:17px; font-weight:700; color:#111">${h2}</div>`);
+      if(h3) line(`<div style="${HD}">${h3}</div>`);
+      n.querySelectorAll("p").forEach(p=>line(`<p style="${P}">${t(p)}</p>`));
+    } else if(cl.contains("glance")){
+      n.querySelectorAll(".grow").forEach(r=>{
+        line(`<div style="${P}"><b>${t(r.querySelector(".gl"))}:</b> ${t(r.querySelector(".gv"))} <span style="${GRAY}">· ${t(r.querySelector(".gb"))}</span></div>`);
+      });
+      n.querySelectorAll(".caveat").forEach(cv=>line(`<div style="margin:2px 0 6px; font-size:12.5px; ${GRAY}">${t(cv)}</div>`));
+    } else if(cl.contains("legcard")){
+      const nm=n.querySelector(".lc .nm").cloneNode(true);
+      const sc=nm.querySelector(".sc"); const scT=t(sc); if(sc) sc.remove();
+      line(`<div style="margin:12px 0 0; font-size:14px; color:#111"><b>${t(nm)}</b> — ${t(n.querySelector(".badge")).toUpperCase()} <span style="${GRAY}">(${scT})</span></div>`);
+      line(`<div style="${P}; margin-top:2px">${t(n.querySelector(".vb"))}</div>`);
+    } else if(cl.contains("shortest")){
+      const cn=n.cloneNode(true); const rk=cn.querySelector(".ranklist"); const rkT=t(rk); if(rk) rk.remove();
+      line(`<div style="${P}; border-left:3px solid #EE7B3C; padding-left:10px; margin:12px 0"><b>${t(cn)}</b><br>${rkT}</div>`);
+    } else if(cl.contains("leak")){
+      line(`<div style="${P}">• ${t(n)}</div>`);
+    } else if(cl.contains("callout")){
+      const cn=n.cloneNode(true); const h=cn.querySelector(".h"); const ht=t(h); if(h) h.remove();
+      if(ht) line(`<div style="${HD}">${ht}</div>`);
+      line(`<div style="${P}">${cn.innerHTML.trim()}</div>`);
+    } else if(cl.contains("cost")){
+      Array.from(n.children).forEach(ch=>{
+        if(ch.classList.contains("row")) line(`<div style="${P}"><b>${t(ch.querySelector(".k"))}:</b> ${t(ch.querySelector(".v"))}</div>`);
+        else if(ch.classList.contains("prize")) line(`<p style="${P}"><b>${t(ch)}</b></p>`);
+        else { const tx=t(ch); if(tx) line(`<p style="${P}">${tx}</p>`); }
+      });
+    } else if(cl.contains("onemove")){
+      line(`<div style="margin:10px 0; padding:10px 12px; border-left:3px solid #EE7B3C; background:#faf5ef"><div style="font-size:11px; letter-spacing:1px; text-transform:uppercase; ${GRAY}">${t(n.querySelector(".h"))}</div><div style="font-size:15px; font-weight:700; margin-top:4px; color:#111">${t(n.querySelector(".mv"))}</div></div>`);
+    } else if(cl.contains("blindspot")||cl.contains("small")||cl.contains("caveat")){
+      line(`<div style="margin:8px 0; font-size:12.5px; ${GRAY}">${t(n)}</div>`);
+    } else {
+      const fires=n.querySelectorAll(".firename");
+      if(fires.length){ fires.forEach(f=>line(`<div style="${P}">• ${t(f)}</div>`)); }
+      else { const tx=t(n); if(tx) line(`<p style="${P}">${tx}</p>`); }
+    }
+  });
+  return out.join("");
 }
 async function sendLead(R, who){
   if(!CFG.webhookUrl) return;
@@ -1751,9 +1801,11 @@ async function sendLead(R, who){
     score: R.overall, archetype: R.arch, trade: tradeLabel(), payer: payerLabel(),
     revenue_m: S.A3, headcount: S.A4, gm_pct: R.gm, net_pct: R.net,
     shortest_leg: leName(R.shortest), one_move: oneMove(R),
-    /* the notification email renders <br>, not \n — compact summary on top,
-       the visitor's full on-page report underneath */
-    report: (reportText(R) + "\n\n=== THE FULL REPORT, AS THEY SAW IT ===\n\n" + fullReportText()).replace(/\n/g, "<br>"),
+    /* the notification email renders HTML — compact summary on top,
+       the visitor's full on-page report styled underneath */
+    report: reportText(R).replace(/\n/g, "<br>")
+      + '<br><br><div style="font-size:16px; font-weight:800; letter-spacing:.5px; color:#111; border-top:2px solid #ddd; padding-top:14px">THE FULL REPORT, AS THEY SAW IT</div>'
+      + emailReportHtml(),
   };
   const ph = who.phone.trim(); if(ph) body.phone = ph; /* GHL 422s on empty strings — omit blank keys */
   try{
