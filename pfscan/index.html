@@ -13,6 +13,7 @@
   gtag('js', new Date());
   gtag('config', 'G-G1XJQQZKRG');
 </script>
+
 <meta name="description" content="A scan that reads your business the way an operator reads it: Sales, Operations, Accounting and Cash as one system. See which legs are carrying the load and which are leaking. No email required." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -66,6 +67,10 @@
   .brand .nm{font-family:var(--display); font-weight:800; font-size:15px; letter-spacing:.02em}
   .brand .nm span{color:var(--ember)}
   .brand .by{margin-left:auto; font-family:var(--mono); font-size:11px; color:var(--text-faint); letter-spacing:.08em; text-transform:uppercase}
+  .brand .by a{color:inherit; text-decoration:none; border-bottom:1px solid var(--line-soft)}
+  .brand .by a:hover{color:var(--ember); border-bottom-color:var(--ember)}
+  .footer a{color:inherit; text-decoration:none}
+  .footer a:hover{color:var(--ember)}
 
   /* ---------- cover ---------- */
   .cover .hero{margin-top:auto; margin-bottom:auto; padding:36px 0}
@@ -521,7 +526,7 @@ function renderCover(app){
     <div class="brand">
       <svg class="mk" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c2 5-1 6 0 9 3-1 4-4 4-4 3 4 4 7 4 10a8 8 0 1 1-16 0c0-4 3-7 4-9 1 2 2 2 2 2 0-3 0-6-2-8z" fill="var(--ember)"/></svg>
       <div class="nm">PROFIT &amp; <span>FIRES</span> SCAN</div>
-      <div class="by">By Adam Redhead</div>
+      <div class="by">By Adam Redhead &middot; <a href="/">adamredhead.co</a></div>
     </div>
     <div class="hero">
       <span class="eyebrow">For home services and contracting owners doing $3M to $15M</span>
@@ -944,9 +949,9 @@ function renderCross(app){
   st.appendChild(footer()); app.appendChild(w);
 }
 
-function footer(){
+function footer(home){
   const f=el("div","footer");
-  f.innerHTML=`<span>PROFIT &amp; FIRES SCAN</span><span>BALLPARK IS THE LAW</span>`;
+  f.innerHTML=`<span>PROFIT &amp; FIRES SCAN</span><span>BALLPARK IS THE LAW</span>`+(home?`<span><a href="/">BACK TO ADAMREDHEAD.CO</a></span>`:``);
   return f;
 }
 
@@ -1155,7 +1160,7 @@ function renderReport(app){
     resetState(); go(0);
   };
   rs.appendChild(b); st.appendChild(rs);
-  st.appendChild(footer());
+  st.appendChild(footer(true));
   app.appendChild(w);
 }
 function divider(p){ p.appendChild(el("div","divider")); }
