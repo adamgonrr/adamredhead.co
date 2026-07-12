@@ -540,7 +540,7 @@ function renderCover(app){
         </div>
       </div>
     </div>
-    <div class="footer"><span>NRR MANAGEMENT LLC</span><span>A FOUR-LEG READ: SALES · OPS · ACCT · CASH</span></div>
+    <div class="footer"><span>&copy; 2026 NRR MANAGEMENT LLC &middot; <a href="/privacy">PRIVACY &amp; TERMS</a></span><span>A FOUR-LEG READ: SALES · OPS · ACCT · CASH</span></div>
   `;
   w.appendChild(stage); app.appendChild(w);
   $("#startBtn").onclick = ()=>go(1);
@@ -951,7 +951,7 @@ function renderCross(app){
 
 function footer(home){
   const f=el("div","footer");
-  f.innerHTML=`<span>PROFIT &amp; FIRES SCAN</span><span>BALLPARK IS THE LAW</span>`+(home?`<span><a href="/">BACK TO ADAMREDHEAD.CO</a></span>`:``);
+  f.innerHTML=`<span>PROFIT &amp; FIRES SCAN</span><span>BALLPARK IS THE LAW</span>`+(home?`<span><a href="/">BACK TO ADAMREDHEAD.CO</a> &middot; <a href="/privacy">PRIVACY</a></span>`:``);
   return f;
 }
 
