@@ -1812,6 +1812,20 @@ function emailReportHtml(){
   });
   return out.join("");
 }
+/* Paid-traffic attribution: capture utm_* once from the landing URL and carry
+   them into the lead webhook + notification email. First touch wins;
+   sessionStorage survives the mid-scan reload path. Values are sanitized
+   because they end up inside the notification email's HTML. */
+const UTM = (()=>{
+  try{
+    const q = new URLSearchParams(location.search), got = {};
+    ["utm_source","utm_medium","utm_campaign","utm_content","utm_term"].forEach(k=>{
+      const v = q.get(k); if(v) got[k] = v.replace(/[^\w\-. \/]/g,"").slice(0,100);
+    });
+    if(Object.keys(got).length) sessionStorage.setItem("pfscan_utm", JSON.stringify(got));
+    return JSON.parse(sessionStorage.getItem("pfscan_utm")||"{}");
+  }catch(e){ return {}; }
+})();
 async function sendLead(R, who, action){
   if(!CFG.webhookUrl) return;
   const parts = who.name.trim().split(/\s+/);
@@ -1822,9 +1836,13 @@ async function sendLead(R, who, action){
     score: R.overall, archetype: R.arch, trade: tradeLabel(), payer: payerLabel(),
     revenue_m: S.A3, headcount: S.A4, gm_pct: R.gm, net_pct: R.net,
     shortest_leg: leName(R.shortest), one_move: oneMove(R),
-    /* the notification email renders HTML — the action stamp, the compact
-       summary, then the visitor's full on-page report styled underneath */
-    report: '<div style="font-size:13px; font-weight:700; letter-spacing:.5px; text-transform:uppercase; color:#C9531F">— They ' + (action || "downloaded the report") + ' —</div><br>'
+    ...UTM,
+    /* the notification email renders HTML — the action stamp, the traffic
+       source when one was captured, the compact summary, then the visitor's
+       full on-page report styled underneath */
+    report: '<div style="font-size:13px; font-weight:700; letter-spacing:.5px; text-transform:uppercase; color:#C9531F">— They ' + (action || "downloaded the report") + ' —</div>'
+      + (UTM.utm_source ? '<div style="font-size:12px; color:#666; margin-top:4px">Arrived via ' + [UTM.utm_source,UTM.utm_medium,UTM.utm_campaign,UTM.utm_content].filter(Boolean).join(" · ") + '</div>' : '')
+      + '<br>'
       + reportText(R).replace(/\n/g, "<br>")
       + '<br><br><div style="font-size:16px; font-weight:800; letter-spacing:.5px; color:#111; border-top:2px solid #ddd; padding-top:14px">THE FULL REPORT, AS THEY SAW IT</div>'
       + emailReportHtml(),
